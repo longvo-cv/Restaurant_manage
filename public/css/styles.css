@@ -3,7 +3,7 @@ footer {
   margin-top: auto;
   /* Make footer take up whole width of page */
   border-top: solid 1px;
-  color: white;
+  color: #333333;
   /* Change footer color */
   background-color: #3ba99c;
 }
@@ -30,5 +30,5 @@ a {
 }
 .navbar-custom {
   background-color: #3ba99c;
-    color: #333333;
+  color: #333333;
 }
