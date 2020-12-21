@@ -31,3 +31,6 @@ footer {
 .navbar-custom {
     background-color: #3ba99c;
 }
+.navbar-custom .navbar-text {
+    color: #333333;
+}
