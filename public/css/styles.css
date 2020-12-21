@@ -28,3 +28,6 @@ footer {
             display: inline-block;
             padding: 8px 16px;
         }
+.navbar-custom {
+    background-color: #3ba99c;
+}
