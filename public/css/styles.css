@@ -7,7 +7,7 @@ footer {
     border-top: solid 1px;
     color: white;
     /* Change footer color */
-    background-color: darkslategray;
+    background-color: #3ba99c;
 }
 
 .clear { clear: both; height: 100px; }
