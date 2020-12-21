@@ -178,7 +178,7 @@ async function listParts(fetchPath) {
 
         // "Add part to User's build" button
         const button = document.createElement('a');
-        button.className = "btn btn-primary addToBuild";
+        button.className = "btn btn-dark addToBuild";
         button.id = part.id.toString();
         button.innerText = "Select this Part";
 

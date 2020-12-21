@@ -7,6 +7,9 @@ footer {
   /* Change footer color */
   background-color: #3ba99c;
 }
+#warning {
+    color: darkred;
+}
 
 .clear {
   clear: both;
