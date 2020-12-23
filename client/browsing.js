@@ -146,9 +146,9 @@ async function listParts(fetchPath) {
 
         // part img
         const img = document.createElement('img');
-        img.src = part.imgSource;
+        img.src = part.image;
         img.className = "card-img-top";
-        img.alt = part.imgDesc;
+        img.alt = "image";
         img.style.height = '200px';
         img.style.width = '200px';
 
@@ -169,12 +169,12 @@ async function listParts(fetchPath) {
         // part id
         const id = document.createElement('h6');
         id.className = "card-subtitle mb-2 text-muted";
-        id.innerText = "Part ID: ".concat(part.id);
+        id.innerText = "Part ID: ".concat(part.customer_id);
 
         // part description
         const desc = document.createElement('p');
         desc.className = "card-text";
-        desc.innerText = part.desc;
+        desc.innerText = part.nameItem;
 
         // "Add part to User's build" button
         const button = document.createElement('a');
@@ -316,7 +316,7 @@ async function pcbButtons() {
         });
     }
 }
-
+/* 
 // Function to add eventlistener to all buttons on case page
 async function caseButtons() {
     const btnArray = document.getElementsByClassName("addToBuild");
@@ -450,7 +450,7 @@ async function cableButtons() {
             document.getElementById("warning").innerText = "";
         });
     }
-}
+} */
 
 
 // Function to clear all parts in table

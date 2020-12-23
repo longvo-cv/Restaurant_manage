@@ -144,38 +144,42 @@ async function connectAndRun(task) {
 }
 
 // The next 5 functions are generic select * statements for each table in the database. TODO: Add tables for login and profile
-async function getPCBs() {
-    return await connectAndRun(db => db.any('SELECT * FROM PCBs;'));
+async function getCus() {
+    return await connectAndRun(db => db.any('SELECT * FROM customers;'));
 }
-async function getCases() {
-    return await connectAndRun(db => db.any('SELECT * FROM Cases;'));
+async function getAddresses() {
+    return await connectAndRun(db => db.any('SELECT * FROM addresses;'));
 }
-async function getSwitches() {
-    return await connectAndRun(db => db.any('SELECT * FROM Switches;'));
+async function getItems() {
+    return await connectAndRun(db => db.any('SELECT * FROM items;'));
 }
-async function getkeyCaps() {
-    return await connectAndRun(db => db.any('SELECT * FROM keyCaps;'));
+async function getDeliver() {
+    return await connectAndRun(db => db.any('SELECT * FROM delivery;'));
 }
-async function getCables() {
-    return await connectAndRun(db => db.any('SELECT * FROM Cables;'));
-}
-
-async function getSpecificPcb(itemID) {
-    return await connectAndRun(db => db.any('SELECT * FROM PCBs WHERE itemID=$1;', [itemID]));
+async function getOrders() {
+    return await connectAndRun(db => db.any('SELECT * FROM orders;'));
 }
 
-async function getSpecificCase(itemID) {
-    return await connectAndRun(db => db.any('SELECT * FROM cases WHERE itemID=$1;', [itemID]));
+async function getLocation(address_id) {
+    return await connectAndRun(db => db.any('SELECT * FROM addresses WHERE address_id=$1;', [address_id]));
 }
-async function getSpecificSwitch(itemID) {
-    return await connectAndRun(db => db.any('SELECT * FROM switches WHERE itemID=$1;', [itemID]));
+
+async function getOrder(order_id) {
+    return await connectAndRun(db => db.any('SELECT * FROM orders WHERE order_id=$1;', [order_id]));
 }
-async function getSpecificKeycap(itemID) {
+async function getDelivery(deliver_id) {
+    return await connectAndRun(db => db.any('SELECT * FROM delivery WHERE deliver_id=$1;', [deliver_id]));
+}
+
+async function getItem(itemID) {
+    return await connectAndRun(db => db.any('SELECT * FROM items WHERE item_id=$1;', [itemID]));
+}
+/* async function getSpecificKeycap(itemID) {
     return await connectAndRun(db => db.any('SELECT * FROM keycaps WHERE itemID=$1;', [itemID]));
 }
 async function getSpecificCable(itemID) {
     return await connectAndRun(db => db.any('SELECT * FROM cables WHERE itemID=$1;', [itemID]));
-}
+} */
 async function findUser(username) {
 
     const r = await connectAndRun(db => db.any('SELECT * FROM profiles where username=$1;', [username]));
@@ -191,37 +195,37 @@ async function addBuild(buildID, pcbID, caseID, switchID, keycapID, cableID) {
 }
 // Retrieve a table of cases compatible with a chosen pcb
 // Return value: List of objects, each containing a tuple of the table
-async function getCasesFromPCBs(pcb_size) {
+/* async function getCasesFromPCBs(pcb_size) {
     // return await connectAndRun(db => db.any('SELECT c.itemId, c.image, c.partname, c.partDescription, c.pcb_size, c.price, c.purchase_link FROM pcbs p join cases c on p.PCB_size=c.PCB_size WHERE p.PCB_size=$1;', [pcb_size]));
     return await connectAndRun(db => db.any('SELECT * FROM cases WHERE PCB_size=$1;', [pcb_size]));
-}
+} */
 
 // Retrieve a tables of switches compatible with a chosen pcb
 // Return value: List of objects, each containing a tuple of the table
-async function getSwitchesFromPCBs(switch_type) {
+/* async function getSwitchesFromPCBs(switch_type) {
     // return await connectAndRun(db => db.any('SELECT s.itemID, s.image, s.partname, s.partdescription, s.switch_type, s.price, s.purchase_link FROM pcbs p join switches s on p.switch_type=s.switch_type WHERE p.switch_type=$1;', [switch_type]));
     return await connectAndRun(db => db.any('SELECT * FROM switches WHERE switch_type=$1;', [switch_type]));
 }
-
+ */
 
 
 //Use this function to retrieve the build from the sql table for display on the profile page
-async function getBuild(buildID) {
+/* async function getBuild(buildID) {
     return await connectAndRun(db => db.any('SELECT * FROM builds where buildID=$1;', [buildID]));
-}
+} */
 
 
 // Use this to insert a new build into the build table
-async function newBuild(buildID, pcbID, caseID, switchID, keycapID, cableID) {
+/* async function newBuild(buildID, pcbID, caseID, switchID, keycapID, cableID) {
     return await connectAndRun(db =>
         db.none('INSERT INTO builds values($1, $2, $3);'[buildID, pcbID, caseID, switchID, keycapID, cableID]));
-}
+} */
 
 //Use this function to delete a build from the table
-async function deleteBuild(buildID) {
+/* async function deleteBuild(buildID) {
     return await connectAndRun(db => db.none('DELETE FROM builds where buildID=$1', [buildID]));
 }
-
+ */
 
 // testing here
 // (async () => {
@@ -233,23 +237,25 @@ async function deleteBuild(buildID) {
 
 // Export functions
 module.exports = {
-    getPCBs: getPCBs,
-    getCases: getCases,
-    getSwitches: getSwitches,
-    getkeyCaps: getkeyCaps,
-    getCables: getCables,
-    getCasesFromPCBs: getCasesFromPCBs,
-    getSwitchesFromPCBs: getSwitchesFromPCBs,
+    getCus: getCus,
+    getAddresses: getAddresses,
+    getItems: getItems,
+        getItem: getItem,
+
+    getDeliver: getDeliver,
+    getOrders: getOrders,
+    getLocation: getLocation,
+    getOrder: getOrder,
     findUser: findUser,
     addUser: addUser,
-    getBuild: getBuild,
+    /* getBuild: getBuild,
     newBuild: newBuild,
-    deleteBuild: deleteBuild,
+    deleteBuild: deleteBuild, */
     addBuild: addBuild,
-    getSpecificPcb: getSpecificPcb,
-    getSpecificCase: getSpecificCase,
+    getDelivery: getDelivery,
+   /*  getSpecificCase: getSpecificCase,
     getSpecificSwitch: getSpecificSwitch,
     getSpecificKeycap: getSpecificKeycap,
-    getSpecificCable: getSpecificCable
+    getSpecificCable: getSpecificCable */
 
 };
