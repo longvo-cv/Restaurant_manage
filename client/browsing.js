@@ -145,12 +145,12 @@ async function listParts(fetchPath) {
         main.style.width = "100%";
 
         // part img
-        const img = document.createElement('img');
+        /* const img = document.createElement('img');
         img.src = part.image;
         img.className = "card-img-top";
         img.alt = "image";
         img.style.height = '200px';
-        img.style.width = '200px';
+        img.style.width = '200px'; */
 
         // part body
         const body = document.createElement('div');
@@ -164,7 +164,7 @@ async function listParts(fetchPath) {
         // part price
         const price = document.createElement('h5');
         price.className = "card-subtitle mb-2";
-        price.innerText = "$".concat(part.price);
+        price.innerText = "$".concat(part.order_id);
 
         // part id
         const id = document.createElement('h6');
@@ -172,25 +172,24 @@ async function listParts(fetchPath) {
         id.innerText = "Part ID: ".concat(part.customer_id);
 
         // part description
-        const desc = document.createElement('p');
+       /*  const desc = document.createElement('p');
         desc.className = "card-text";
-        desc.innerText = part.nameItem;
+        desc.innerText = part.nameItem; */
 
         // "Add part to User's build" button
         const button = document.createElement('a');
         button.className = "btn btn-dark addToBuild";
-        button.id = part.id.toString();
+        button.id = part.customer_id.toString();
         button.innerText = "Select this Part";
 
         // Append children to card body
         body.appendChild(name);
         body.appendChild(price);
         body.appendChild(id);
-        body.appendChild(desc);
+       
         body.appendChild(button);
 
         // Append img and card body to card div
-        main.appendChild(img);
         main.appendChild(body);
 
         //append card to product table div
