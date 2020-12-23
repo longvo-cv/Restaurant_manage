@@ -451,9 +451,9 @@ app.post('/updateParts', (req, res) => {
 
         // Store compatibility parameters if receiving pcb information
         if (data.partType === 'pcb') {
-            const tuple = await db.getSpecificPcb(build[data.partType]);
-            build.pcbSwitchType = tuple[0].switch_type;
-            build.pcbCaseType = tuple[0].pcb_size;
+            const tuple = await db.getOrder(build[data.order_id]);
+            build.pcbSwitchType = tuple[0].item_id;
+            build.pcbCaseType = tuple[0].time;
         }
         res.writeHead(200);
         res.end('Post Request Handled');
