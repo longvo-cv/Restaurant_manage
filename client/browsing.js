@@ -180,7 +180,7 @@ async function listParts(fetchPath) {
         const button = document.createElement('a');
         button.className = "btn btn-dark addToBuild";
         button.id = part.customer_id.toString();
-        button.innerText = "Select this Part";
+        button.innerText = "See more";
 
         // Append children to card body
         body.appendChild(name);

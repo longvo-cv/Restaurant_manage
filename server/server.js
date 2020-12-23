@@ -446,8 +446,8 @@ app.post('/updateParts', (req, res) => {
         console.log("Post request handling");
         console.log(data);
 
-        build[data.partType] = parseInt(data.partID, 10);
-        console.log(build);
+       /*  build[data.partType] = parseInt(data.partID, 10);
+        console.log(build); */
 
         // Store compatibility parameters if receiving pcb information
         if (data.partType === 'pcb') {
