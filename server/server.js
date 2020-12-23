@@ -594,13 +594,13 @@ app.get('/caseProducts', async (req, res) => {
 app.get('/pcbProducts', async (req, res) => {
     // writeBlob(res);
     const cus = await db.getCus();
-    const loc = await db.getLocation(cus.address_id)
+    /* const loc = await db.getLocation(cus.address_id)
     const order = await db.getOrder(cus.order_id)
-    const items = await db.getItem(order.item_id)
+    const items = await db.getItem(order.item_id) */
     writeDbObject(res, cus, customerObject);
-    writeDbObject(res, loc, addressObject);
+   /*  writeDbObject(res, loc, addressObject);
     writeDbObject(res, order, orderObject);
-    writeDbObject(res, items, orderObject);
+    writeDbObject(res, items, orderObject); */
     res.end();
 });
 app.get('/keySwitchProducts', async (req, res) => {
