@@ -449,6 +449,8 @@ app.post('/updateParts', (req, res) => {
         const data = JSON.parse(body);
         console.log("Post request handling");
         console.log(data);
+        console.log(data.order_id);
+        console.log(data.order_stat);
 
        /*  build[data.partType] = parseInt(data.partID, 10);
         console.log(build); */
