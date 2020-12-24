@@ -557,8 +557,10 @@ function itemObject(object) {
 // These can be modified for more specific stuff, but they already do everything we need them to.
 // A case of being more robust than needed.
 function caseObject(object) {
-    return { imgSource: object.image, imgDesc: 'placeholder text', name: object.partname, id: object.itemid, desc: object.partdescription, price: object.price };
+    return { order_id_order: object.order_id, items_id: object.item_id, order_customer_id: object.customer_id, time: object.time, deliver: object.deliver_id };
 }
+
+
 function switchObject(object) {
     return { imgSource: object.image, imgDesc: 'placeholder text', name: object.partname, id: object.itemid, desc: object.partdescription, price: object.price };
 }
