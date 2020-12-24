@@ -454,6 +454,7 @@ app.post('/updateParts', (req, res) => {
         console.log(build); */
             build[order_id] = parseInt(data.order_id,10)
             build[order_stat] = parseInt(data.order_stat,10)
+            console.log(build)
         // Store compatibility parameters if receiving pcb information
         if (build[order_stat] === 1) {
             const tuple = await db.getOrder(build[order_id]);
@@ -608,7 +609,7 @@ app.get('/caseProducts', async (req, res) => {
 app.get('/pcbProducts', async (req, res) => {
     // writeBlob(res);
     const cus = await db.getCus();
-    build.order_id = cus.order_id
+    //build.order_id = cus.order_id
     /* const loc = await db.getLocation(cus.address_id)
     const order = await db.getOrder(cus.order_id)
     const items = await db.getItem(order.item_id) */
