@@ -183,9 +183,9 @@ async function listParts(fetchPath) {
         // "Add part to User's build" button
         const button = document.createElement('a');
         button.className = "btn btn-dark addToBuild";
-        button.customer_id = part.customer_id.toSring();
-        button.order_stat = part.order_stat.toSring()
-        button.order_id = part.order_id.toSring()
+        button.customer_id = part.customer_id.toString();
+        button.order_stat = part.order_stat.toString()
+        button.order_id = part.order_id.toString()
         button.innerText = "See more";
 
         // Append children to card body
