@@ -467,6 +467,8 @@ app.post('/updateParts', (req, res) => {
             /* build.pcbSwitchType = tuple[0].item_id;
             build.pcbCaseType = tuple[0].time; */
         }
+        build.item_id = tuple[0].item_id
+
         res.writeHead(200);
         res.end('Post Request Handled');
     });
@@ -578,7 +580,13 @@ function caseObject(object) {
 
 
 function switchObject(object) {
-    return { imgSource: object.image, imgDesc: 'placeholder text', name: object.partname, id: object.itemid, desc: object.partdescription, price: object.price };
+    return { 
+        item_id: object.item_id, 
+        type:object.type,
+        img:object.image,
+        ingredients: object.ingredients, 
+        name: object.name, 
+        price: object.price };
 }
 function keyCapObject(object) {
     return { imgSource: object.image, imgDesc: 'placeholder text', name: object.partname, id: object.itemid, desc: object.partdescription, price: object.price };

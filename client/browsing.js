@@ -287,7 +287,7 @@ async function listItem(fetchPath) {
         main.style.width = "100%";
 
         const img = document.createElement('img');
-        img.src = part.image;
+        img.src = part.img;
         img.className = "card-img-top";
         img.alt = "food";
         img.style.height = '200px';
@@ -503,7 +503,7 @@ async function caseButtons() {
             document.getElementById("userInstruction").innerHTML = "<b>Select a <span id='partWord'>Keyswitch</span> of your choice to proceed to keycaps.</b>";
 
             // List products and update buttons
-            await listParts("./keySwitchProducts");
+            await listItem("./keySwitchProducts");
             //await ksButtons();
         });
     }
