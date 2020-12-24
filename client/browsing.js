@@ -183,7 +183,9 @@ async function listParts(fetchPath) {
         // "Add part to User's build" button
         const button = document.createElement('a');
         button.className = "btn btn-dark addToBuild";
-        button.id = part.customer_id;
+        button.customer_id = part.customer_id;
+        button.order_stat = part.order_stat
+        button.order_id = part.order_id
         button.innerText = "See more";
 
         // Append children to card body
@@ -221,7 +223,7 @@ async function listOrder(fetchPath) {
         // part price
         const order_id = document.createElement('h5');
         order_id.className = "card-subtitle mb-2";
-        order_id.innerText = "$".concat(part.order_id_order);
+        order_id.innerText = "Order ID".concat(part.order_id_order);
 
         // part id
         const id = document.createElement('h6');
@@ -230,7 +232,7 @@ async function listOrder(fetchPath) {
 
         const items_id = document.createElement('h6');
         items_id.className = "card-subtitle mb-2 text-muted";
-        items_id.innerText = "Customer ID: ".concat(part.items_id);
+        items_id.innerText = "Item ID: ".concat(part.items_id);
 
 
         const time = document.createElement('h6');
@@ -239,7 +241,7 @@ async function listOrder(fetchPath) {
 
         const deliver = document.createElement('h6');
         deliver.className = "card-subtitle mb-2 text-muted";
-        deliver.innerText = "Order type: ".concat(part.deliver);
+        deliver.innerText = "Deliver id: ".concat(part.deliver);
 
         // part description
        /*  const desc = document.createElement('p');

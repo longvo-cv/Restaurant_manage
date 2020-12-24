@@ -456,7 +456,7 @@ app.post('/updateParts', (req, res) => {
         if (data.order_stat === 1) {
             const tuple = await db.getOrder(build[data.order_id]);
             console.log(tuple[0])
-            build.item_id = tuple[0].item_id
+            //build.item_id = tuple[0].item_id
             build.deliver = tuple[0].deliver_id
             /* build.pcbSwitchType = tuple[0].item_id;
             build.pcbCaseType = tuple[0].time; */
@@ -598,7 +598,7 @@ function writeDbObject(res, sqlObject, f) {
 // const x = {imgSource : "asdfoiwje.com", imgDesc : "picture of part", name : "name of part", id: unique id number, desc : "part description"}
 app.get('/caseProducts', async (req, res) => {
     // writeBlob(res);
-    const sqlObject = await db.getOrders();
+    const sqlObject = await db.getOrder(build.order_id);
     writeDbObject(res, sqlObject, caseObject);
     res.end();
 });
