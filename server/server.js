@@ -431,7 +431,8 @@ app.get('/profile.js', checkLoggedIn, (req, res) => {
     case: null,
     switch: null,
     keycap: null,
-    cable: null
+    cable: null,
+    order_id:null
 }; 
 
 // Updates the above global variable build with each call.
@@ -557,7 +558,11 @@ function itemObject(object) {
 // These can be modified for more specific stuff, but they already do everything we need them to.
 // A case of being more robust than needed.
 function caseObject(object) {
-    return { order_id_order: object.order_id, items_id: object.item_id, order_customer_id: object.customer_id, time: object.time, deliver: object.deliver_id };
+    return { order_id_order: object.order_id, 
+        items_id: object.item_id, 
+        order_customer_id: object.customer_id, 
+        time: object.time, 
+        deliver: object.deliver_id };
 }
 
 
@@ -596,6 +601,7 @@ app.get('/caseProducts', async (req, res) => {
 app.get('/pcbProducts', async (req, res) => {
     // writeBlob(res);
     const cus = await db.getCus();
+    build.order_id = cus.order_id
     /* const loc = await db.getLocation(cus.address_id)
     const order = await db.getOrder(cus.order_id)
     const items = await db.getItem(order.item_id) */
