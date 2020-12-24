@@ -251,7 +251,7 @@ async function listOrder(fetchPath) {
         // "Add part to User's build" button
         const button = document.createElement('a');
         button.className = "btn btn-dark addToBuild";
-        button.id = part.customer_id;
+        button.id = part.order_customer_id;
         button.innerText = "See more";
 
         // Append children to card body
