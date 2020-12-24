@@ -311,7 +311,7 @@ async function pcbButtons() {
 
             // List products and update buttons
             await listParts("./caseProducts");
-            await caseButtons();
+            //await caseButtons();
         });
     }
 }
