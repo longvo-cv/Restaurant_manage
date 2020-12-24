@@ -162,14 +162,18 @@ async function listParts(fetchPath) {
         name.innerText = part.name;
 
         // part price
-        const price = document.createElement('h5');
-        price.className = "card-subtitle mb-2";
-        price.innerText = "$".concat(part.order_id);
+        const order_id = document.createElement('h5');
+        order_id.className = "card-subtitle mb-2";
+        order_id.innerText = "$".concat(part.order_id);
 
         // part id
         const id = document.createElement('h6');
         id.className = "card-subtitle mb-2 text-muted";
-        id.innerText = "Part ID: ".concat(part.customer_id);
+        id.innerText = "Customer ID: ".concat(part.customer_id);
+
+        const order_stat = document.createElement('h6');
+        order_stat.className = "card-subtitle mb-2 text-muted";
+        order_stat.innerText = "Order type: ".concat(part.order_stat);
 
         // part description
        /*  const desc = document.createElement('p');
@@ -179,7 +183,7 @@ async function listParts(fetchPath) {
         // "Add part to User's build" button
         const button = document.createElement('a');
         button.className = "btn btn-dark addToBuild";
-        button.id = part.customer_id.toString();
+        button.id = part.customer_id;
         button.innerText = "See more";
 
         // Append children to card body
