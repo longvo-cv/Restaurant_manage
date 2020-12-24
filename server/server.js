@@ -451,12 +451,13 @@ app.post('/updateParts', (req, res) => {
         console.log(build); */
 
         // Store compatibility parameters if receiving pcb information
-        if (data.order_stat === 1) {
+       // if (data.order_stat === 1) {
             const tuple = await db.getOrder(build[data.order_id]);
+            console.log(tuple[0])
             build.order_id = tuple[0].order_id
             /* build.pcbSwitchType = tuple[0].item_id;
             build.pcbCaseType = tuple[0].time; */
-        }
+        //}
         res.writeHead(200);
         res.end('Post Request Handled');
     });
