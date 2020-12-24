@@ -255,7 +255,8 @@ async function listOrder(fetchPath) {
         button.items_id = part.items_id;
         button.order_id = part.order_id_order
         button.time = part.time
-        button.deliver = part.deliver
+        button.deliver_id = part.deliver
+        button.order_stat = part.order_stat
 
         button.innerText = "See more";
 
