@@ -223,16 +223,16 @@ async function listOrder(fetchPath) {
         // part price
         const order_id = document.createElement('h5');
         order_id.className = "card-subtitle mb-2";
-        order_id.innerText = "$".concat(part.order_id_order);
+        order_id.innerText = "$".concat(part.order_id);
 
         // part id
         const id = document.createElement('h6');
         id.className = "card-subtitle mb-2 text-muted";
-        id.innerText = "Customer ID: ".concat(part.order_customer_id);
+        id.innerText = "Customer ID: ".concat(part.customer_id);
 
         const items_id = document.createElement('h6');
         items_id.className = "card-subtitle mb-2 text-muted";
-        items_id.innerText = "Customer ID: ".concat(part.items_id);
+        items_id.innerText = "Customer ID: ".concat(part.item_id);
 
 
         const time = document.createElement('h6');
@@ -241,7 +241,7 @@ async function listOrder(fetchPath) {
 
         const deliver = document.createElement('h6');
         deliver.className = "card-subtitle mb-2 text-muted";
-        deliver.innerText = "Order type: ".concat(part.deliver);
+        deliver.innerText = "Order type: ".concat(part.deliver_id);
 
         // part description
        /*  const desc = document.createElement('p');
