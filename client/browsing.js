@@ -164,7 +164,7 @@ async function listParts(fetchPath) {
         // part price
         const order_id = document.createElement('h5');
         order_id.className = "card-subtitle mb-2";
-        order_id.innerText = "$".concat(part.order_id);
+        order_id.innerText = "Order id: ".concat(part.order_id);
 
         // part id
         const id = document.createElement('h6');
@@ -223,7 +223,7 @@ async function listOrder(fetchPath) {
         // part price
         const order_id = document.createElement('h5');
         order_id.className = "card-subtitle mb-2";
-        order_id.innerText = "Order ID".concat(part.order_id_order);
+        order_id.innerText = "Order ID: ".concat(part.order_id_order);
 
         // part id
         const id = document.createElement('h6');
