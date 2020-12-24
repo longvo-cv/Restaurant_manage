@@ -385,11 +385,11 @@ async function pcbButtons() {
 
             // List products and update buttons
             await listOrder("./caseProducts");
-            //await caseButtons();
+            await caseButtons();
         });
     }
 }
-/* 
+ 
 // Function to add eventlistener to all buttons on case page
 async function caseButtons() {
     const btnArray = document.getElementsByClassName("addToBuild");
@@ -422,7 +422,7 @@ async function caseButtons() {
         });
     }
 }
-
+/*
 // Function to add eventlistener to all buttons on keyswitch page
 async function ksButtons() {
     const btnArray = document.getElementsByClassName("addToBuild");
