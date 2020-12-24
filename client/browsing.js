@@ -188,8 +188,9 @@ async function listParts(fetchPath) {
 
         // Append children to card body
         body.appendChild(name);
-        body.appendChild(price);
+        body.appendChild(order_id);
         body.appendChild(id);
+        body.appendChild(order_stat);
        
         body.appendChild(button);
 
