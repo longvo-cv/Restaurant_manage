@@ -291,11 +291,10 @@ async function pcbButtons() {
             await fetch('/updateParts', {
                 method: 'POST',
                 body: JSON.stringify({
-                    partType: 'pcb',
-                    partID: btnArray[i].id
+                    //partType: 'pcb',
+                    order_id: btnArray[i].order_id
                 })
             });
-
             cleanTable();
 
             // Hide/show correct tabs to display build progress

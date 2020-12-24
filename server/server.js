@@ -424,7 +424,7 @@ app.get('/profile.js', checkLoggedIn, (req, res) => {
 // });
 
 
-const build = {
+ const build = {
     pcb: null,
     pcbSwitchType: null,
     pcbCaseType: null,
@@ -432,7 +432,7 @@ const build = {
     switch: null,
     keycap: null,
     cable: null
-};
+}; 
 
 // Updates the above global variable build with each call.
 // Clientside access to this enforces each part of build is updated in order.
@@ -452,8 +452,8 @@ app.post('/updateParts', (req, res) => {
         // Store compatibility parameters if receiving pcb information
         if (data.order_stat === 1) {
             const tuple = await db.getOrder(build[data.order_id]);
-            build.pcbSwitchType = tuple[0].item_id;
-            build.pcbCaseType = tuple[0].time;
+            /* build.pcbSwitchType = tuple[0].item_id;
+            build.pcbCaseType = tuple[0].time; */
         }
         res.writeHead(200);
         res.end('Post Request Handled');
