@@ -462,7 +462,7 @@ app.post('/updateParts', (req, res) => {
         if (build.order_stat === 1) {
             const tuple = await db.getOrder(build.order_id);
             console.log(tuple[0])
-            //build.item_id = tuple[0].item_id
+            build.item_id = tuple[0].item_id
             build.deliver = tuple[0].deliver_id
             /* build.pcbSwitchType = tuple[0].item_id;
             build.pcbCaseType = tuple[0].time; */
@@ -625,7 +625,7 @@ app.get('/pcbProducts', async (req, res) => {
 app.get('/keySwitchProducts', async (req, res) => {
     // writeBlob(res);
     // const sqlObject = await db.getSwitches();
-    const sqlObject = await db.getSwitchesFromPCBs(build.pcbSwitchType);
+    const sqlObject = await db.getItem(build.item_id);
     writeDbObject(res, sqlObject, switchObject);
     res.end();
 });

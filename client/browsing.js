@@ -277,6 +277,88 @@ async function listOrder(fetchPath) {
     }
 }
 
+async function listItem(fetchPath) {
+    const partsRequest = await fetch(fetchPath);
+    const partsData = partsRequest.ok ? await partsRequest.json() : [];
+    for (const part of partsData) {
+        // part div
+        const main = document.createElement('div');
+        main.className = "card mb-2";
+        main.style.width = "100%";
+
+        const img = document.createElement('img');
+        img.src = part.image;
+        img.className = "card-img-top";
+        img.alt = "food";
+        img.style.height = '200px';
+        img.style.width = '200px';
+        // part body
+        const body = document.createElement('div');
+        body.className = "card-body";
+
+         // part name
+        const name = document.createElement('h5');
+        name.className = "card-title";
+        name.innerText = part.name; 
+
+        // part price
+        /* const order_id = document.createElement('h5');
+        order_id.className = "card-subtitle mb-2";
+        order_id.innerText = "Order ID: ".concat(part.order_id_order);
+ */
+        // part id
+        const id = document.createElement('h6');
+        id.className = "card-subtitle mb-2 text-muted";
+        id.innerText = "Item ID: ".concat(part.item_id);
+
+        const type = document.createElement('h6');
+        type.className = "card-subtitle mb-2 text-muted";
+        type.innerText = "Type: ".concat(part.type);
+
+
+        const ingredients = document.createElement('h6');
+        ingredients.className = "card-subtitle mb-2 text-muted";
+        ingredients.innerText = "Order type: ".concat(part.ingredients);
+
+        const price = document.createElement('h6');
+        price.className = "card-subtitle mb-2 text-muted";
+        price.innerText = "Price: $".concat(part.price);
+
+        // part description
+       /*  const desc = document.createElement('p');
+        desc.className = "card-text";
+        desc.innerText = part.nameItem; */
+
+        // "Add part to User's build" button
+        const button = document.createElement('a');
+        button.className = "btn btn-dark addToBuild";
+        //button.customer_id = part.order_customer_id;
+        button.item_id = part.item_id;
+        button.type = part.type
+        button.ingredients = part.ingredients
+        button.nameItem = part.name
+        button.price = part.price
+
+        button.innerText = "See more";
+
+        // Append children to card body
+        body.appendChild(id);
+        body.appendChild(type);
+        body.appendChild(ingredients);
+        body.appendChild(price);
+        //body.appendChild(deliver);
+       
+        body.appendChild(button);
+
+        // Append img and card body to card div
+        main.appendChild(img);
+        main.appendChild(body);
+
+        //append card to product table div
+        document.getElementById("product-table").appendChild(main);
+    }
+}
+
 async function pcbBack() {
     cleanTable();
 
@@ -391,7 +473,7 @@ async function pcbButtons() {
 
             // List products and update buttons
             await listOrder("./caseProducts");
-            //await caseButtons();
+            await caseButtons();
         });
     }
 }
@@ -422,7 +504,7 @@ async function caseButtons() {
 
             // List products and update buttons
             await listParts("./keySwitchProducts");
-            await ksButtons();
+            //await ksButtons();
         });
     }
 }
