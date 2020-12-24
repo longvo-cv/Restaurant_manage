@@ -449,12 +449,12 @@ app.post('/updateParts', (req, res) => {
 
        /*  build[data.partType] = parseInt(data.partID, 10);
         console.log(build); */
-
+            build.order_id = data.order_id
         // Store compatibility parameters if receiving pcb information
         if (data.order_stat === 1) {
             const tuple = await db.getOrder(build[data.order_id]);
             console.log(tuple[0])
-            build.order_id = data.order_id
+            
             /* build.pcbSwitchType = tuple[0].item_id;
             build.pcbCaseType = tuple[0].time; */
         }
