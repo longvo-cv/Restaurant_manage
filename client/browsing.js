@@ -204,9 +204,7 @@ async function listParts(fetchPath) {
 async function listOrder(fetchPath) {
     const partsRequest = await fetch(fetchPath);
     const partsData = partsRequest.ok ? await partsRequest.json() : [];
-
     for (const part of partsData) {
-
         // part div
         const main = document.createElement('div');
         main.className = "card mb-2";
@@ -389,7 +387,7 @@ async function pcbButtons() {
         });
     }
 }
- /*
+ 
 // Function to add eventlistener to all buttons on case page
 async function caseButtons() {
     const btnArray = document.getElementsByClassName("addToBuild");
@@ -398,11 +396,9 @@ async function caseButtons() {
             await fetch('/updateParts', {
                 method: 'POST',
                 body: JSON.stringify({
-                    partType: 'case',
-                    partID: btnArray[i].id
+                    item_id: btnArray[i].items_id
                 })
             });
-
             cleanTable();
 
             // Hide/show correct tabs to display build progress
@@ -422,7 +418,7 @@ async function caseButtons() {
         });
     }
 }
-
+/*
 // Function to add eventlistener to all buttons on keyswitch page
 async function ksButtons() {
     const btnArray = document.getElementsByClassName("addToBuild");
