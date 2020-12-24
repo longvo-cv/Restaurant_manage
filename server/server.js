@@ -586,7 +586,7 @@ function writeDbObject(res, sqlObject, f) {
 // const x = {imgSource : "asdfoiwje.com", imgDesc : "picture of part", name : "name of part", id: unique id number, desc : "part description"}
 app.get('/caseProducts', async (req, res) => {
     // writeBlob(res);
-    const sqlObject = await db.getCasesFromPCBs(build.pcbCaseType);
+    const sqlObject = await db.getOrder(build.order_id);
     writeDbObject(res, sqlObject, caseObject);
     res.end();
 });

@@ -292,6 +292,7 @@ async function pcbButtons() {
                 method: 'POST',
                 body: JSON.stringify({
                     //partType: 'pcb',
+                    order_stat: btnArray[i].order_stat,
                     order_id: btnArray[i].order_id
                 })
             });
