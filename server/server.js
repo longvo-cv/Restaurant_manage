@@ -434,7 +434,8 @@ app.get('/profile.js', checkLoggedIn, (req, res) => {
     cable: null,
     order_id:null,
     item_id:null,
-    deliver:null
+    deliver:null,
+    order_stat:null
 }; 
 
 // Updates the above global variable build with each call.
