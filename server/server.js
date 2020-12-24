@@ -467,7 +467,7 @@ app.post('/updateParts', (req, res) => {
             /* build.pcbSwitchType = tuple[0].item_id;
             build.pcbCaseType = tuple[0].time; */
         }
-        build.item_id = tuple[0].item_id
+        build.item_id = data.item_id
 
         res.writeHead(200);
         res.end('Post Request Handled');
