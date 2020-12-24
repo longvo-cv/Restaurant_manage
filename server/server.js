@@ -451,11 +451,12 @@ app.post('/updateParts', (req, res) => {
         console.log(data);
         console.log(data.order_id);
         console.log(data.order_stat);
+        console.log(build)
 
        /*  build[data.partType] = parseInt(data.partID, 10);
         console.log(build); */
-            build[order_id] = parseInt(data.order_id,10)
-            build[order_stat] = parseInt(data.order_stat,10)
+            build.order_id = data.order_id
+            build.order_stat = data.order_stat
             console.log(build)
         // Store compatibility parameters if receiving pcb information
         if (build[order_stat] === 1) {
