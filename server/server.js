@@ -451,7 +451,7 @@ app.post('/updateParts', (req, res) => {
 
        /*  build[data.partType] = parseInt(data.partID, 10);
         console.log(build); */
-            //build.order_id = data.order_id
+            build.order_id = data.order_id
         // Store compatibility parameters if receiving pcb information
         if (data.order_stat === 1) {
             const tuple = await db.getOrder(build[data.order_id]);
@@ -598,7 +598,7 @@ function writeDbObject(res, sqlObject, f) {
 // const x = {imgSource : "asdfoiwje.com", imgDesc : "picture of part", name : "name of part", id: unique id number, desc : "part description"}
 app.get('/caseProducts', async (req, res) => {
     // writeBlob(res);
-    const sqlObject = await db.getOrder(build.order_id);
+    const sqlObject = await db.getOrders();
     writeDbObject(res, sqlObject, caseObject);
     res.end();
 });
