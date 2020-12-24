@@ -232,15 +232,7 @@ function checkLoggedIn(req, res, next) {
     }
 }
 // Deprecated functions
-/* function blob() {
-    const imgSource = "https://cdn.shopify.com/s/files/1/1473/3902/products/658baabe15b30353f6c8386a00a112e1_52ab83c4-011c-41cf-b07e-df27d5038d0a_large.jpg?v=1584436526";
-    const imgDesc = faker.commerce.productDescription();
-    const name = faker.commerce.productName();
-    const id = faker.random.number();
-    const desc = faker.commerce.productDescription();
-    const price = faker.commerce.price();
-    return { imgSource: imgSource, imgDesc: imgDesc, name: name, id: id, desc: desc, price: price };
-} */
+
 
 
 /* function writeBlob(res) {
