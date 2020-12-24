@@ -495,13 +495,13 @@ window.addEventListener("load", async function () {
     document.getElementById("pcbButton").disabled = true;
     document.getElementById("caseButton").disabled = true;
     document.getElementById("ksButton").disabled = true;
-    document.getElementById("kcButton").disabled = true;
-    document.getElementById("cableButton").disabled = true;
+    //document.getElementById("kcButton").disabled = true;
+    //document.getElementById("cableButton").disabled = true;
 
     document.getElementById("partGroup").style.visibility = "hidden";
     document.getElementById("sortGroup").style.visibility = "hidden";
-    document.getElementById("rebuildButton").style.visibility = "hidden";
-    document.getElementById("cbuildButton").style.visibility = "hidden";
+   // document.getElementById("rebuildButton").style.visibility = "hidden";
+    //document.getElementById("cbuildButton").style.visibility = "hidden";
     document.getElementById("backButton").style.visibility = "hidden";
 
     // when Build button is first clicked list pcbs and remove button
