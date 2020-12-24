@@ -566,7 +566,7 @@ window.addEventListener("load", async function () {
 
         await listParts("./pcbProducts");
         await pcbButtons();
-        await fetch('./removePart');
+        //await fetch('./removePart');
     });
 
     // Add to build button
