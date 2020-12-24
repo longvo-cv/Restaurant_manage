@@ -199,7 +199,7 @@ app.get('/removePart', (req, res) => {
 });
 
 // Retrieves all the parts from their respective table using the ids stored in the builds table with the id from user
-/* app.get('/userParts', async (req, res) => {
+ app.get('/userParts', async (req, res) => {
     console.log("Trying to send: JSON response data");
     const tuple = await db.getBuild(user.buildid);
     const pcbPart = await db.getSpecificPcb(tuple[0].pcbpartid);
@@ -211,7 +211,7 @@ app.get('/removePart', (req, res) => {
     res.writeHead(200, { 'Content-Type': 'text/json' });
     res.write(JSON.stringify(convertDbToObject([pcbPart[0], casePart[0], switchPart[0], keyCapPart[0], cablePart[0]], pcbObject)));
     res.end();
-}); */
+}); 
 // app.get('/socialGet', (req, res) => {
 //     console.log("Trying to send: JSON response data");
 //     res.writeHead(200, { 'Content-Type': 'text/json' });
