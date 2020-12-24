@@ -201,6 +201,69 @@ async function listParts(fetchPath) {
         document.getElementById("product-table").appendChild(main);
     }
 }
+async function listOrder(fetchPath) {
+    const partsRequest = await fetch(fetchPath);
+    const partsData = partsRequest.ok ? await partsRequest.json() : [];
+
+    for (const part of partsData) {
+
+        // part div
+        const main = document.createElement('div');
+        main.className = "card mb-2";
+        main.style.width = "100%";
+        // part body
+        const body = document.createElement('div');
+        body.className = "card-body";
+
+        /* // part name
+        const name = document.createElement('h5');
+        name.className = "card-title";
+        name.innerText = part.customer; */
+
+        // part price
+        const order_id = document.createElement('h5');
+        order_id.className = "card-subtitle mb-2";
+        order_id.innerText = "$".concat(part.order_id);
+
+        // part id
+        const id = document.createElement('h6');
+        id.className = "card-subtitle mb-2 text-muted";
+        id.innerText = "Customer ID: ".concat(part.customer_id);
+
+        const time = document.createElement('h6');
+        time.className = "card-subtitle mb-2 text-muted";
+        time.innerText = "Order type: ".concat(part.time);
+
+        const deliver = document.createElement('h6');
+        deliver.className = "card-subtitle mb-2 text-muted";
+        deliver.innerText = "Order type: ".concat(part.deliver);
+
+        // part description
+       /*  const desc = document.createElement('p');
+        desc.className = "card-text";
+        desc.innerText = part.nameItem; */
+
+        // "Add part to User's build" button
+        const button = document.createElement('a');
+        button.className = "btn btn-dark addToBuild";
+        button.id = part.customer_id;
+        button.innerText = "See more";
+
+        // Append children to card body
+        body.appendChild(id);
+        body.appendChild(order_id);
+        body.appendChild(time);
+        body.appendChild(deliver);
+       
+        body.appendChild(button);
+
+        // Append img and card body to card div
+        main.appendChild(body);
+
+        //append card to product table div
+        document.getElementById("product-table").appendChild(main);
+    }
+}
 
 async function pcbBack() {
     cleanTable();
@@ -315,7 +378,7 @@ async function pcbButtons() {
             document.getElementById("userInstruction").innerHTML = "<b>Select a <span id='partWord'>Case</span> of your choice to proceed to cases.</b>";
 
             // List products and update buttons
-            await listParts("./caseProducts");
+            await listOrder("./caseProducts");
             //await caseButtons();
         });
     }
