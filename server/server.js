@@ -459,8 +459,8 @@ app.post('/updateParts', (req, res) => {
             build.order_stat = data.order_stat
             console.log(build)
         // Store compatibility parameters if receiving pcb information
-        if (build[order_stat] === 1) {
-            const tuple = await db.getOrder(build[order_id]);
+        if (build.order_stat === 1) {
+            const tuple = await db.getOrder(build.order_id);
             console.log(tuple[0])
             //build.item_id = tuple[0].item_id
             build.deliver = tuple[0].deliver_id
