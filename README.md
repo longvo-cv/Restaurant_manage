@@ -16,7 +16,12 @@ CREATE TABLE orders (order_id int, item_id int, customer_id int , time varchar(1
 CREATE TABLE banquets (customer_id int,booking_id int, hall_capacity int, price decimal, time varchar(100))
 
  # Databases (7 tables)
-
+    - Profiles:  
+        * email  
+        * username  
+        * buildID  
+        * hashedpwd  
+        * salt
     - Booking Banquets:  
         * customer_id  
         * booking_id    

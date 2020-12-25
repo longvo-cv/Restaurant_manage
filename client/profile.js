@@ -18,8 +18,8 @@ async function addToRemButton() {
 
 
 window.addEventListener("load", async function () {
-    const userPartsRequest = await fetch("./userParts");
-    const userPartsData = userPartsRequest.ok ? await userPartsRequest.json() : [];
+    //const userPartsRequest = await fetch("./userParts");
+    //const userPartsData = userPartsRequest.ok ? await userPartsRequest.json() : [];
 
     // Header of User's parts table
     const headerTr = document.createElement('tr');
@@ -56,7 +56,7 @@ window.addEventListener("load", async function () {
     document.getElementById('user-parts-table').appendChild(headerTr);
 
     // List of User's selected parts, if any
-    let rowNum = 1;
+    /* let rowNum = 1;
     for (const userPart of userPartsData) {
         const tr = document.createElement('tr');
         const th = document.createElement('th');
@@ -104,7 +104,7 @@ window.addEventListener("load", async function () {
 
         document.getElementById('user-parts-table').appendChild(tr);
     }
-
+ */
     // User info bottom of page
     const userInfoRequest = await fetch("./userInfo");
     const userInfoData = userInfoRequest.ok ? await userInfoRequest.json() : [];
