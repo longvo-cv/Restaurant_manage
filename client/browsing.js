@@ -571,7 +571,7 @@ window.addEventListener("load", async function () {
     document.getElementById("pcbButton").disabled = true;
     document.getElementById("caseButton").disabled = true;
     document.getElementById("ksButton").disabled = true;
-    //document.getElementById("kcButton").disabled = true;
+    document.getElementById("banquetButtonView").disabled = true;
     //document.getElementById("cableButton").disabled = true;
 
     document.getElementById("partGroup").style.visibility = "hidden";
