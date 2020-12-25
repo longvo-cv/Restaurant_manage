@@ -231,7 +231,7 @@ async function listBanquets(fetchPath) {
 
         // "Add part to User's build" button
         const button = document.createElement('a');
-        button.className = "btn btn-dark addToBuild";
+        button.className = "btn btn-dark";
         //button.customer_id = part.order_customer_id;
         button.customer_id = part.customer_id;
         button.booking_id = part.booking_id
@@ -268,7 +268,7 @@ async function pcbBack() {
 
     backButton.removeEventListener('click', pcbBack);
 
-    document.getElementById("userInstruction").innerHTML = "<b>Select a <span id='partWord'>PCB</span> of your choice to proceed to cases.</b>";
+    //document.getElementById("userInstruction").innerHTML = "<b>Select a <span id='partWord'>PCB</span> of your choice to proceed to cases.</b>";
 
     await listParts("./pcbProducts");
     await pcbButtons();
@@ -284,7 +284,7 @@ async function caseBack() {
     backButton.addEventListener('click', pcbBack);
     backButton.removeEventListener('click', caseBack);
 
-    document.getElementById("userInstruction").innerHTML = "<b>Select a <span id='partWord'>Case</span> of your choice to proceed to cases.</b>";
+    //document.getElementById("userInstruction").innerHTML = "<b>Select a <span id='partWord'>Case</span> of your choice to proceed to cases.</b>";
 
     await listParts("./caseProducts");
     await caseButtons();
@@ -300,7 +300,7 @@ async function ksBack() {
     backButton.addEventListener('click', caseBack);
     backButton.removeEventListener('click', ksBack);
 
-    document.getElementById("userInstruction").innerHTML = "<b>Select a <span id='partWord'>Keyswitch</span> of your choice to proceed to cases.</b>";
+    //document.getElementById("userInstruction").innerHTML = "<b>Select a <span id='partWord'>Keyswitch</span> of your choice to proceed to cases.</b>";
 
     await listParts("./keySwitchProducts");
     await ksButtons();
@@ -316,7 +316,7 @@ async function kcBack() {
     backButton.addEventListener('click', ksBack);
     backButton.removeEventListener('click', kcBack);
 
-    document.getElementById("userInstruction").innerHTML = "<b>Select a <span id='partWord'>Keycap</span> of your choice to proceed to cases.</b>";
+    //document.getElementById("userInstruction").innerHTML = "<b>Select a <span id='partWord'>Keycap</span> of your choice to proceed to cases.</b>";
 
     await listParts("./keyCapProducts");
     await kcButtons();
@@ -338,7 +338,7 @@ async function cableBack() {
     document.getElementById("rebuildButton").style.visibility = "hidden";
     document.getElementById("cbuildButton").style.visibility = "hidden";
 
-    document.getElementById("userInstruction").innerHTML = "<b>Select a <span id='partWord'>Cable</span> of your choice to proceed to cases.</b>";
+    //document.getElementById("userInstruction").innerHTML = "<b>Select a <span id='partWord'>Cable</span> of your choice to proceed to cases.</b>";
 
     await listParts("./cableProducts");
     await cableButtons();

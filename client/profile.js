@@ -109,8 +109,8 @@ window.addEventListener("load", async function () {
     const userInfoRequest = await fetch("./userInfo");
     const userInfoData = userInfoRequest.ok ? await userInfoRequest.json() : [];
 
-    document.getElementById('navbarUsername').innerText = userInfoData.username;
-    document.getElementById('username').innerText = userInfoData.username;
+    document.getElementById('navbarUsername').innerText = userInfoData.name;
+    //document.getElementById('username').innerText = userInfoData.username;
     document.getElementById('name').innerText = userInfoData.name;
     // document.getElementById('bday').innerText = userInfoData.bday;
     document.getElementById('email').innerText = userInfoData.email;
