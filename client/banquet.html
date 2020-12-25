@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Banquet Booking</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+    integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- NOTE: change your files from styles.css to css/styles.css -->
+  <style>
+    .container {
+      padding: 60px 15px 0;
+    }
+  </style>
+  <link rel="stylesheet" href="css/styles.css">
+  <script type="module" src="browsing.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <!--Nav Bar-->
+    <nav class="navbar navbar-expand-sm fixed-top navbar-light navbar-custom">
+      <a class="navbar-brand">MyRestaurant</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <div class="navbar-nav">
+          <!-- NOTE: Changed hrefs for the buttons. Please change in your respective files -->
+          <a class="nav-item nav-link" href="Order.html">Food Order<span class="sr-only">(current)</span></a>
+          <a class="nav-item nav-link" href="banquet.html">Booking Banquets</a>
+        </div>
+      </div>
+      <form class="form-inline">
+        <!-- NOTE: I changed the button type, copy paste this into your respective files
+                     so links work everywhere -->
+        <a href="profilePage.html" class="btn btn-dark my-2 my-sm-0">My Profile</a>
+      </form>
+    </nav>
+    <h1 id="backToTop">Banquet Booking</h1>
+
+
+    <!--User instructions-->
+    <div id="userInstruction1">
+      <b>See all banquet booking details</b>
+    </div>
+    
+
+    <!--Buttons to appear after build completion-->
+
+
+
+    <!--Progress Tab / Sorting Buttons-->
+    <div class="btn-toolbar justify-content-between mb-4" role="group" style="width: 100%">
+      <div id="partGroup" class="btn-group mr-2" role="group">
+        <button id="banquetButtonView" type="button" class="btn btn-secondary" aria-haspopup="true" aria-expanded="false">
+          Customer
+        </button>
+
+
+
+      </div>
+
+      <div id="banquet-group" class="btn-group mr-2" role="group">
+        <button id="beginButton1" type="button" class="btn btn-success" aria-haspopup="true" aria-expanded="false">
+          View Banquet Orders <br>
+        </button>
+        
+      </div>
+
+      
+    </div>
+
+    <!--Table to list products-->
+    <div id="product-table" class="itemlist"></div>
+
+    <div class="clear"></div>
+    <footer class="page-footer fixed-bottom font-small mdb-color pt-2">
+      <!--Copyright-->
+      <div class="container-fluid">
+
+        <div class="row">
+
+          <div class="col-md-3 mx-auto " id='contact-email'>
+            Report issues at &nbsp; <a href="#!" class="badge badge-light">example-email@example-address</a>
+          </div>
+
+          <!--Button to go to top of page-->
+          <div class="col-md-3 mx-auto ">
+            <a class="nav-link btn btn-dark my-sm-0" href="#backToTop">Go to Top of Page</a>
+          </div>
+
+          <!--Logout button-->
+          <div class="col-md-3 mx-auto " id="logoutButton">
+            <a href="login.html" class="nav-link btn btn-dark my-sm-0">Logout</a>
+          </div>
+
+        </div>
+
+        <div class="row">
+          <div class="col-md-3 mx-auto ">
+            <div class="text-center py-3">© 2020 Copyright
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </footer>
+  </div>
+</body>
+
+</html>

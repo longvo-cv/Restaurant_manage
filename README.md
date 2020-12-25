@@ -13,7 +13,7 @@ CREATE TABLE delivery (deliver_id int, status varchar(50), employee_id int);
 
 CREATE TABLE orders (order_id int, item_id int, customer_id int , time varchar(100) , deliver_id int);  
 
-
+CREATE TABLE banquets (customer_id int,booking_id int, hall_capacity int, price decimal, time varchar(100))
 Databases:  
     - Booking Banquets:  
         + duration  

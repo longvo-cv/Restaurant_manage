@@ -272,6 +272,14 @@ function switchObject(object) {
         name: object.name, 
         price: object.price };
 }
+function banquetObject(object) {
+    return { 
+        customer_id: object.customer_id, 
+        booking_id:object.booking_id,
+        hall_capacity:object.hall_capacity,
+        time: object.time, 
+        price: object.price };
+}
 function keyCapObject(object) {
     return { imgSource: object.image, imgDesc: 'placeholder text', name: object.partname, id: object.itemid, desc: object.partdescription, price: object.price };
 }
@@ -309,6 +317,19 @@ app.get('/pcbProducts', async (req, res) => {
     const order = await db.getOrder(cus.order_id)
     const items = await db.getItem(order.item_id) */
     writeDbObject(res, cus, customerObject);
+   /*  writeDbObject(res, loc, addressObject);
+    writeDbObject(res, order, orderObject);
+    writeDbObject(res, items, orderObject); */
+    res.end();
+});
+app.get('/banquetInfo', async (req, res) => {
+    // writeBlob(res);
+    const cus = await db.getBanquets();
+    //build.order_id = cus.order_id
+    /* const loc = await db.getLocation(cus.address_id)
+    const order = await db.getOrder(cus.order_id)
+    const items = await db.getItem(order.item_id) */
+    writeDbObject(res, cus, banquetObject);
    /*  writeDbObject(res, loc, addressObject);
     writeDbObject(res, order, orderObject);
     writeDbObject(res, items, orderObject); */

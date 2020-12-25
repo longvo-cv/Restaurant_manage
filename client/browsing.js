@@ -227,6 +227,82 @@ async function listItem(fetchPath) {
     }
 }
 
+async function listBanquets(fetchPath) {
+    const partsRequest = await fetch(fetchPath);
+    const partsData = partsRequest.ok ? await partsRequest.json() : [];
+    for (const part of partsData) {
+        // part div
+        const main = document.createElement('div');
+        main.className = "card mb-2";
+        main.style.width = "100%";
+
+       
+        // part body
+        const body = document.createElement('div');
+        body.className = "card-body";
+
+         // part name
+        const name = document.createElement('h5');
+        name.className = "card-title";
+        name.innerText = "Booking ID: ".concat(part.booking_id); 
+
+        // part price
+        /* const order_id = document.createElement('h5');
+        order_id.className = "card-subtitle mb-2";
+        order_id.innerText = "Order ID: ".concat(part.order_id_order);
+ */
+        // part id
+        const id = document.createElement('h6');
+        id.className = "card-subtitle mb-2 text-muted";
+        id.innerText = "Item ID: ".concat(part.customer_id);
+
+        const hall_capacity = document.createElement('h6');
+        hall_capacity.className = "card-subtitle mb-2 text-muted";
+        hall_capacity.innerText = "Hall capacity: ".concat(part.hall_capacity);
+
+
+        const time = document.createElement('h6');
+        time.className = "card-subtitle mb-2 text-muted";
+        time.innerText = "Time: ".concat(part.time);
+
+        const price = document.createElement('h6');
+        price.className = "card-subtitle mb-2 text-muted";
+        price.innerText = "Price: $".concat(part.price);
+
+        // part description
+       /*  const desc = document.createElement('p');
+        desc.className = "card-text";
+        desc.innerText = part.nameItem; */
+
+        // "Add part to User's build" button
+        const button = document.createElement('a');
+        button.className = "btn btn-dark addToBuild";
+        //button.customer_id = part.order_customer_id;
+        button.customer_id = part.customer_id;
+        button.booking_id = part.booking_id
+        button.hall_capacity = part.ingredients
+        button.time = part.time
+        button.price = part.price
+
+        button.innerText = "See more";
+
+        // Append children to card body
+        body.appendChild(id);
+        body.appendChild(hall_capacity);
+        body.appendChild(time);
+        body.appendChild(price);
+        //body.appendChild(deliver);
+       
+        body.appendChild(button);
+
+        // Append img and card body to card div
+        main.appendChild(body);
+
+        //append card to product table div
+        document.getElementById("product-table").appendChild(main);
+    }
+}
+
 async function pcbBack() {
     cleanTable();
 
@@ -523,6 +599,22 @@ window.addEventListener("load", async function () {
         //await fetch('./removePart');
     });
 
+    document.getElementById("beginButton1").addEventListener('click', async () => {
+        cleanTable();
+
+        const button = document.getElementById("beginButton1");
+        button.parentNode.removeChild(button);
+
+        //document.getElementById("sortGroup").style.visibility = "visible";
+
+        document.getElementById("banquetButtonView").disabled = false;
+
+        document.getElementById("userInstruction1").innerHTML = "<b>Select a <span id='partWord'>PCB</span> of your choice to proceed to cases.</b>";
+
+        await listBanquets("./banquetInfo");
+        await pcbButtons();
+        //await fetch('./removePart');
+    });
     // Add to build button
     document.getElementById('cbuildButton').addEventListener('click', async () => {
         await fetch('/insertBuild');
