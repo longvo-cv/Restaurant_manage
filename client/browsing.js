@@ -596,6 +596,9 @@ if(document.getElementById("pcbButton")){
         await pcbButtons();
         //await fetch('./removePart');
     });
+    /* document.getElementById('cbuildButton').addEventListener('click', async () => {
+        await fetch('/insertBuild');
+    }); */
 
 }
     else if(document.getElementById("banquetButtonView")){
@@ -630,9 +633,7 @@ if(document.getElementById("pcbButton")){
     });
 }
     // Add to build button
-    document.getElementById('cbuildButton').addEventListener('click', async () => {
-        await fetch('/insertBuild');
-    });
+    
 
     // Logout button
     document.getElementById('logoutButton').addEventListener('click', async () => {
