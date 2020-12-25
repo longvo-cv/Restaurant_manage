@@ -603,7 +603,7 @@ if(document.getElementById("pcbButton")){
     //document.getElementById("cableButton").disabled = true;
 
     document.getElementById("partGroup").style.visibility = "hidden";
-    document.getElementById("sortGroup").style.visibility = "hidden";
+    //document.getElementById("sortGroup").style.visibility = "hidden";
    // document.getElementById("rebuildButton").style.visibility = "hidden";
     //document.getElementById("cbuildButton").style.visibility = "hidden";
     document.getElementById("backButton").style.visibility = "hidden";
