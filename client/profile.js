@@ -53,7 +53,7 @@ window.addEventListener("load", async function () {
     headerTr.appendChild(headerLink);
     // headerTr.appendChild(headerRemove);
 
-    document.getElementById('user-parts-table').appendChild(headerTr);
+    //document.getElementById('user-parts-table').appendChild(headerTr);
 
     // List of User's selected parts, if any
     /* let rowNum = 1;
