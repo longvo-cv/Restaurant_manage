@@ -12,14 +12,6 @@ async function listParts(fetchPath) {
         main.className = "card mb-2";
         main.style.width = "100%";
 
-        // part img
-        /* const img = document.createElement('img');
-        img.src = part.image;
-        img.className = "card-img-top";
-        img.alt = "image";
-        img.style.height = '200px';
-        img.style.width = '200px'; */
-
         // part body
         const body = document.createElement('div');
         body.className = "card-body";
@@ -42,11 +34,6 @@ async function listParts(fetchPath) {
         const order_stat = document.createElement('h6');
         order_stat.className = "card-subtitle mb-2 text-muted";
         order_stat.innerText = "Order type: ".concat(part.order_stat);
-
-        // part description
-       /*  const desc = document.createElement('p');
-        desc.className = "card-text";
-        desc.innerText = part.nameItem; */
 
         // "Add part to User's build" button
         const button = document.createElement('a');
@@ -83,11 +70,6 @@ async function listOrder(fetchPath) {
         const body = document.createElement('div');
         body.className = "card-body";
 
-        /* // part name
-        const name = document.createElement('h5');
-        name.className = "card-title";
-        name.innerText = part.customer; */
-
         // part price
         const order_id = document.createElement('h5');
         order_id.className = "card-subtitle mb-2";
@@ -102,7 +84,6 @@ async function listOrder(fetchPath) {
         items_id.className = "card-subtitle mb-2 text-muted";
         items_id.innerText = "Item ID: ".concat(part.items_id);
 
-
         const time = document.createElement('h6');
         time.className = "card-subtitle mb-2 text-muted";
         time.innerText = "Order type: ".concat(part.time);
@@ -110,11 +91,6 @@ async function listOrder(fetchPath) {
         const deliver = document.createElement('h6');
         deliver.className = "card-subtitle mb-2 text-muted";
         deliver.innerText = "Deliver id: ".concat(part.deliver);
-
-        // part description
-       /*  const desc = document.createElement('p');
-        desc.className = "card-text";
-        desc.innerText = part.nameItem; */
 
         // "Add part to User's build" button
         const button = document.createElement('a');
@@ -169,11 +145,6 @@ async function listItem(fetchPath) {
         name.className = "card-title";
         name.innerText = part.name; 
 
-        // part price
-        /* const order_id = document.createElement('h5');
-        order_id.className = "card-subtitle mb-2";
-        order_id.innerText = "Order ID: ".concat(part.order_id_order);
- */
         // part id
         const id = document.createElement('h6');
         id.className = "card-subtitle mb-2 text-muted";
@@ -191,11 +162,6 @@ async function listItem(fetchPath) {
         const price = document.createElement('h6');
         price.className = "card-subtitle mb-2 text-muted";
         price.innerText = "Price: $".concat(part.price);
-
-        // part description
-       /*  const desc = document.createElement('p');
-        desc.className = "card-text";
-        desc.innerText = part.nameItem; */
 
         // "Add part to User's build" button
         const button = document.createElement('a');
@@ -236,7 +202,6 @@ async function listBanquets(fetchPath) {
         main.className = "card mb-2";
         main.style.width = "100%";
 
-       
         // part body
         const body = document.createElement('div');
         body.className = "card-body";
@@ -246,11 +211,6 @@ async function listBanquets(fetchPath) {
         name.className = "card-title";
         name.innerText = "Booking ID: ".concat(part.booking_id); 
 
-        // part price
-        /* const order_id = document.createElement('h5');
-        order_id.className = "card-subtitle mb-2";
-        order_id.innerText = "Order ID: ".concat(part.order_id_order);
- */
         // part id
         const id = document.createElement('h6');
         id.className = "card-subtitle mb-2 text-muted";
@@ -268,11 +228,6 @@ async function listBanquets(fetchPath) {
         const price = document.createElement('h6');
         price.className = "card-subtitle mb-2 text-muted";
         price.innerText = "Price: $".concat(part.price);
-
-        // part description
-       /*  const desc = document.createElement('p');
-        desc.className = "card-text";
-        desc.innerText = part.nameItem; */
 
         // "Add part to User's build" button
         const button = document.createElement('a');
@@ -452,109 +407,6 @@ async function caseButtons() {
         });
     }
 }
-/*
-// Function to add eventlistener to all buttons on keyswitch page
-async function ksButtons() {
-    const btnArray = document.getElementsByClassName("addToBuild");
-    for (let i = 0; i < btnArray.length; i++) {
-        btnArray[i].addEventListener('click', async () => {
-            await fetch('/updateParts', {
-                method: 'POST',
-                body: JSON.stringify({
-                    partType: 'switch',
-                    partID: btnArray[i].id
-                })
-            });
-
-            cleanTable();
-
-            // Hide/show correct tabs to display build progress
-            document.getElementById("ksButton").disabled = true;
-            document.getElementById("kcButton").disabled = false;
-            const backButton = document.getElementById("backButton");
-
-            // Back button function
-            backButton.removeEventListener('click', caseBack);
-            backButton.addEventListener('click', ksBack);
-
-            document.getElementById("userInstruction").innerHTML = "<b>Select a <span id='partWord'>Keycap</span> of your choice to proceed to cables.</b>";
-
-            // List products and update buttons
-            await listParts("./keyCapProducts");
-            await kcButtons();
-        });
-    }
-}
-
-// Function to add eventlistener to all buttons on keycap page
-async function kcButtons() {
-    const btnArray = document.getElementsByClassName("addToBuild");
-    for (let i = 0; i < btnArray.length; i++) {
-        btnArray[i].addEventListener('click', async () => {
-            await fetch('/updateParts', {
-                method: 'POST',
-                body: JSON.stringify({
-                    partType: 'keycap',
-                    partID: btnArray[i].id
-                })
-            });
-
-            cleanTable();
-
-            // Hide/show correct tabs to display build progress
-            document.getElementById("kcButton").disabled = true;
-            document.getElementById("cableButton").disabled = false;
-            const backButton = document.getElementById("backButton");
-
-            // Back button function
-            backButton.removeEventListener('click', ksBack);
-            backButton.addEventListener('click', kcBack);
-
-            document.getElementById("userInstruction").innerHTML = "<b>Select a <span id='partWord'>Cable</span> of your choice to finish.</b>";
-
-            // List products and update buttons
-            await listParts("./cableProducts");
-            await cableButtons();
-        });
-    }
-}
-
-// Function to add eventlistener to all buttons on cable page
-async function cableButtons() {
-    const btnArray = document.getElementsByClassName("addToBuild");
-    for (let i = 0; i < btnArray.length; i++) {
-        btnArray[i].addEventListener('click', async () => {
-            await fetch('/updateParts', {
-                method: 'POST',
-                body: JSON.stringify({
-                    partType: 'cable',
-                    partID: btnArray[i].id
-                })
-            });
-
-            cleanTable();
-
-            // Hide/show correct tabs to display build progress
-            document.getElementById("partGroup").style.visibility = "hidden";
-            //document.getElementById("sortGroup").style.visibility = "hidden";
-            document.getElementById("buildButtons").style.visibility = "visible";
-            document.getElementById("rebuildButton").style.visibility = "visible";
-            document.getElementById("cbuildButton").style.visibility = "visible";
-            const backButton = document.getElementById("backButton");
-
-            // Back button function
-            backButton.removeEventListener('click', kcBack);
-            backButton.addEventListener('click', cableBack);
-
-            document.getElementById("cableButton").disabled = true;
-
-            // End of build
-            document.getElementById("userInstruction").innerHTML = "<b>Build complete.</b>";
-            document.getElementById("warning").innerText = "";
-        });
-    }
-} */
-
 
 // Function to clear all parts in table
 function cleanTable() {
@@ -603,16 +455,8 @@ if(document.getElementById("pcbButton")){
 }
     else if(document.getElementById("banquetButtonView")){
     document.getElementById("banquetButtonView").disabled = true;
-    //document.getElementById("cableButton").disabled = true;
 
     document.getElementById("partGroup").style.visibility = "hidden";
-    //document.getElementById("sortGroup").style.visibility = "hidden";
-   // document.getElementById("rebuildButton").style.visibility = "hidden";
-    //document.getElementById("cbuildButton").style.visibility = "hidden";
-    //document.getElementById("backButton").style.visibility = "hidden";
-
-    // when Build button is first clicked list pcbs and remove button
-
 
     document.getElementById("beginButton1").addEventListener('click', async () => {
         cleanTable();

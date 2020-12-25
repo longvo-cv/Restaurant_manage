@@ -116,15 +116,7 @@ app.get('/profile.js', checkLoggedIn, (req, res) => {
         res.write(readFileSync(path));
         res.end();
     }
-    // res.send(readFileSync(path));
 });
-
-
-// // Dummy testing endpoint that will be removed eventually
-// app.get('/switches', (req, res) => {
-//     res.send('Switch data I guess?');
-// });
-
 
  const build = {
     pcb: null,
@@ -222,20 +214,6 @@ function checkLoggedIn(req, res, next) {
     }
 }
 // Deprecated functions
-
-
-
-/* function writeBlob(res) {
-    const array = [];
-    for (let i = 0; i < 10; i++) {
-        array.push(blob());
-    }
-    res.writeHead(200, { 'Content-Type': 'text/json' });
-    res.write(JSON.stringify(array, null, 2));
-    return;
-} */
-
-
 // Convert a pcb tuple obtained from a SQL table into an object with correctly named keys
 function customerObject(object) {
     return { customer_id: object.customer_id, name: object.name, email: object.email, booking_id: object.booking_id, address_id: object.address_id, order_id: object.order_id,order_stat: object.order_stat,booking_stat: object.booking_stat};
@@ -312,27 +290,13 @@ app.get('/caseProducts', async (req, res) => {
 app.get('/pcbProducts', async (req, res) => {
     // writeBlob(res);
     const cus = await db.getCus();
-    //build.order_id = cus.order_id
-    /* const loc = await db.getLocation(cus.address_id)
-    const order = await db.getOrder(cus.order_id)
-    const items = await db.getItem(order.item_id) */
     writeDbObject(res, cus, customerObject);
-   /*  writeDbObject(res, loc, addressObject);
-    writeDbObject(res, order, orderObject);
-    writeDbObject(res, items, orderObject); */
     res.end();
 });
 app.get('/banquetInfo', async (req, res) => {
     // writeBlob(res);
     const cus = await db.getBanquets();
-    //build.order_id = cus.order_id
-    /* const loc = await db.getLocation(cus.address_id)
-    const order = await db.getOrder(cus.order_id)
-    const items = await db.getItem(order.item_id) */
     writeDbObject(res, cus, banquetObject);
-   /*  writeDbObject(res, loc, addressObject);
-    writeDbObject(res, order, orderObject);
-    writeDbObject(res, items, orderObject); */
     res.end();
 });
 app.get('/keySwitchProducts', async (req, res) => {

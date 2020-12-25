@@ -14,38 +14,46 @@ CREATE TABLE delivery (deliver_id int, status varchar(50), employee_id int);
 CREATE TABLE orders (order_id int, item_id int, customer_id int , time varchar(100) , deliver_id int);  
 
 CREATE TABLE banquets (customer_id int,booking_id int, hall_capacity int, price decimal, time varchar(100))
-Databases:  
+
+ # Databases (7 tables)
+
     - Booking Banquets:  
-        + duration  
-        + time  
-        + banquet:  
-            +hall_id  
-            +capacity  
-            +price  
+        * customer_id  
+        * booking_id    
+        * hall_capacity  
+        * price  
+        * time  
+
     - Booking/food order:  
-        customer:  
-        + name  
-        + email  
-        + customer_id  
-        + bookingTime  
-        + booking_id  
-        + order_id  
-    + delivery:  
-            + customer_id  
-            + status:  
-            + time  
-            + employee: 
-                + employee_id  
-    + address:  
-            + address_id  
-            + location  
-    + order:  
-            + price  
-            + order_id  
-            + time  
-        + items:  
-                + item_id  
-                + type  
-                + ingredients  
-                + name  
-                + price  
+        - customer:  
+            * customer_id
+            * name  
+            * email  
+            * booking_id  
+            * address_id
+            * order_id  
+            * order_stat  
+            * booking_stat
+        
+
+        - delivery:  
+            * deliver_id  
+            * status  
+            * employee_id  
+
+        - address:  
+            * address_id  
+            * location  
+        - order:  
+            * order_id  
+            * customer_id  
+            * item_id  
+            * time  
+            * deliver_id  
+        - items:  
+            * item_id  
+            * type  
+            * image  
+            * ingredients  
+            * name  
+            * type  
