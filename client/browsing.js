@@ -567,14 +567,12 @@ function cleanTable() {
 
 
 window.addEventListener("load", async function () {
-
+if(document.getElementById("pcbButton")){
     document.getElementById("pcbButton").disabled = true;
     document.getElementById("caseButton").disabled = true;
     document.getElementById("ksButton").disabled = true;
-    document.getElementById("banquetButtonView").disabled = true;
-    //document.getElementById("cableButton").disabled = true;
 
-    document.getElementById("partGroup").style.visibility = "hidden";
+     document.getElementById("partGroup").style.visibility = "hidden";
     document.getElementById("sortGroup").style.visibility = "hidden";
    // document.getElementById("rebuildButton").style.visibility = "hidden";
     //document.getElementById("cbuildButton").style.visibility = "hidden";
@@ -599,6 +597,20 @@ window.addEventListener("load", async function () {
         //await fetch('./removePart');
     });
 
+}
+    else if(document.getElementById("banquetButtonView")){
+    document.getElementById("banquetButtonView").disabled = true;
+    //document.getElementById("cableButton").disabled = true;
+
+    document.getElementById("partGroup").style.visibility = "hidden";
+    document.getElementById("sortGroup").style.visibility = "hidden";
+   // document.getElementById("rebuildButton").style.visibility = "hidden";
+    //document.getElementById("cbuildButton").style.visibility = "hidden";
+    document.getElementById("backButton").style.visibility = "hidden";
+
+    // when Build button is first clicked list pcbs and remove button
+
+
     document.getElementById("beginButton1").addEventListener('click', async () => {
         cleanTable();
 
@@ -614,7 +626,9 @@ window.addEventListener("load", async function () {
         await listBanquets("./banquetInfo");
         await pcbButtons();
         //await fetch('./removePart');
+    
     });
+}
     // Add to build button
     document.getElementById('cbuildButton').addEventListener('click', async () => {
         await fetch('/insertBuild');
