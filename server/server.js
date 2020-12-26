@@ -310,7 +310,7 @@ app.get('/keySwitchProducts', async (req, res) => {
 });
 app.get('/keyCapProducts', async (req, res) => {
     // writeBlob(res);
-    const sqlObject = await db.getLocation(build.address_id);
+    const sqlObject = await db.getLocation(build.item_id);
     writeDbObject(res, sqlObject, keyCapObject);
     res.end();
 });

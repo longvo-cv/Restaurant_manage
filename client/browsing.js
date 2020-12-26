@@ -348,7 +348,7 @@ async function caseBack() {
 async function ksBack() {
     cleanTable();
 
-    document.getElementById("kcButton").disabled = true;
+    //document.getElementById("kcButton").disabled = true;
     document.getElementById("ksButton").disabled = false;
     const backButton = document.getElementById("backButton");
 
