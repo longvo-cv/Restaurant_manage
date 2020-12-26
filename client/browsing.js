@@ -206,14 +206,14 @@ async function listAddress(fetchPath) {
         body.className = "card-body";
 
          // part name
-        const address_id = document.createElement('h5');
-        address_id.className = "card-title";
-        address_id.innerText = part.address_id; 
+        const location = document.createElement('h5');
+        location.className = "card-title";
+        location.innerText =  "Location: ".concat(part.location);
 
         // part id
-        const location = document.createElement('h6');
-        location.className = "card-subtitle mb-2 text-muted";
-        location.innerText = "Location: ".concat(part.location);
+        const address_id = document.createElement('h6');
+        address_id.className = "card-subtitle mb-2 text-muted";
+        address_id.innerText = part.address_id;
 
         // "Add part to User's build" button
         const button = document.createElement('a');
@@ -235,7 +235,7 @@ async function listAddress(fetchPath) {
         body.appendChild(button);
 
         // Append img and card body to card div
-        main.appendChild(img);
+        //main.appendChild(img);
         main.appendChild(body);
 
         //append card to product table div
