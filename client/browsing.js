@@ -427,7 +427,7 @@ async function pcbButtons() {
 
             // List products and update buttons
             await listOrder("./caseProducts");
-            await addressButton();
+            await caseButtons();
         });
     }
 }
@@ -463,7 +463,7 @@ async function caseButtons() {
     }
 }
 
-async function kcButtons() {
+async function ksButtons() {
     const btnArray = document.getElementsByClassName("addToBuild");
     for (let i = 0; i < btnArray.length; i++) {
         btnArray[i].addEventListener('click', async () => {

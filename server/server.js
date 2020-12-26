@@ -323,11 +323,11 @@ app.get('/cableProducts', async (req, res) => {
 app.get('/userInfo', (req, res) => {
     console.log("Trying to send: JSON response data");
     res.writeHead(200, { 'Content-Type': 'text/json' });
-    const name = user.name;
+    const name = user.username;
     const date = "some day";
     const email = user.email;
     const phone = "111 2222 3333";
-    res.write(JSON.stringify({ name: name,  bday: date, email: email, phone: phone }));
+    res.write(JSON.stringify({ name: name,email: email}));
     res.end();
 });
 
