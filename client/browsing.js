@@ -206,14 +206,14 @@ async function listAddress(fetchPath) {
         body.className = "card-body";
 
          // part name
-        const location = document.createElement('h5');
-        location.className = "card-title";
-        location.innerText = "Location: ".concat(part.location);
+        const address_id = document.createElement('h5');
+        address_id.className = "card-title";
+        address_id.innerText = part.address_id; 
 
         // part id
-        const address_id = document.createElement('h6');
-        address_id.className = "card-subtitle mb-2 text-muted";
-        address_id.innerText = part.address_id; 
+        const location = document.createElement('h6');
+        location.className = "card-subtitle mb-2 text-muted";
+        location.innerText = "Location: ".concat(part.location);
 
         // "Add part to User's build" button
         const button = document.createElement('a');
@@ -312,6 +312,8 @@ async function pcbBack() {
 
     document.getElementById("pcbButton").disabled = false;
     document.getElementById("caseButton").disabled = true;
+        document.getElementById("addressButton").disabled = true;
+
     const backButton = document.getElementById("backButton");
     backButton.style.visibility = "hidden";
 
