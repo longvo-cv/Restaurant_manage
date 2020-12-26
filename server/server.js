@@ -259,7 +259,9 @@ function banquetObject(object) {
         price: object.price };
 }
 function keyCapObject(object) {
-    return { imgSource: object.image, imgDesc: 'placeholder text', name: object.partname, id: object.itemid, desc: object.partdescription, price: object.price };
+    return { address_id:object.address_id,
+    location: object.location,
+item_id: object.item_id };
 }
 function cableObject(object) {
     return { imgSource: object.image, imgDesc: 'placeholder text', name: object.partname, id: object.itemid, desc: object.partdescription, price: object.price };
@@ -308,7 +310,7 @@ app.get('/keySwitchProducts', async (req, res) => {
 });
 app.get('/keyCapProducts', async (req, res) => {
     // writeBlob(res);
-    const sqlObject = await db.getkeyCaps();
+    const sqlObject = await db.getLocation(build.address_id);
     writeDbObject(res, sqlObject, keyCapObject);
     res.end();
 });
@@ -325,7 +327,7 @@ app.get('/userInfo', (req, res) => {
     const date = "some day";
     const email = user.email;
     const phone = "111 2222 3333";
-    res.write(JSON.stringify({ name: name, bday: date, email: email, phone: phone }));
+    res.write(JSON.stringify({ name: name,  bday: date, email: email, phone: phone }));
     res.end();
 });
 

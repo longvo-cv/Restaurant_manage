@@ -1,9 +1,9 @@
-INSERT INTO addresses VALUES (2525, '25 Ly Thong Nhat street');
-INSERT INTO addresses VALUES (2526, '1 Le Duan street');
-INSERT INTO addresses VALUES (2527, '399 Tan Ki Tan quy street');
-INSERT INTO addresses VALUES (2528, '18 Hoang Van Thu street');
-INSERT INTO addresses VALUES (2529, '29 Nguyen Van Qua street');
-INSERT INTO addresses VALUES (2530, '30 Nguyen Truong To street');
+INSERT INTO addresses VALUES (2525, '25 Ly Thong Nhat street',100);
+INSERT INTO addresses VALUES (2526, '1 Le Duan street',110);
+INSERT INTO addresses VALUES (2527, '399 Tan Ki Tan quy street',125);
+INSERT INTO addresses VALUES (2528, '18 Hoang Van Thu street',0);
+INSERT INTO addresses VALUES (2529, '29 Nguyen Van Qua street',0);
+INSERT INTO addresses VALUES (2530, '30 Nguyen Truong To street',0);
 
 INSERT INTO delivery VALUES (20, 'Not delivered',3333);
 INSERT INTO delivery VALUES (25, 'Not delivered',4444);

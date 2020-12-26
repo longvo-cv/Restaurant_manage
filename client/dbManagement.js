@@ -69,6 +69,10 @@ async function getItem(itemID) {
     return await connectAndRun(db => db.any('SELECT * FROM items WHERE item_id=$1;', [itemID]));
 }
 
+async function getUser(itemID) {
+    return await connectAndRun(db => db.any('SELECT * FROM customers WHERE item_id=$1;', [itemID]));
+}
+
 async function findUser(username) {
 
     const r = await connectAndRun(db => db.any('SELECT * FROM profiles where username=$1;', [username]));
@@ -97,5 +101,5 @@ module.exports = {
     addUser: addUser,
     addBuild: addBuild,
     getDelivery: getDelivery,
-
+    getUser:getUser
 };

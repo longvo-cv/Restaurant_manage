@@ -192,7 +192,62 @@ async function listItem(fetchPath) {
         document.getElementById("product-table").appendChild(main);
     }
 }
+async function listAddress(fetchPath) {
+    const partsRequest = await fetch(fetchPath);
+    const partsData = partsRequest.ok ? await partsRequest.json() : [];
+    for (const part of partsData) {
+        // part div
+        const main = document.createElement('div');
+        main.className = "card mb-2";
+        main.style.width = "100%";
 
+        const img = document.createElement('img');
+        img.src = part.img;
+        img.className = "card-img-top";
+        img.alt = "food";
+        img.style.height = '200px';
+        img.style.width = '200px';
+        // part body
+        const body = document.createElement('div');
+        body.className = "card-body";
+
+         // part name
+        const address_id = document.createElement('h5');
+        address_id.className = "card-title";
+        address_id.innerText = part.address_id; 
+
+        // part id
+        const location = document.createElement('h6');
+        location.className = "card-subtitle mb-2 text-muted";
+        location.innerText = "Location: ".concat(part.location);
+
+        // "Add part to User's build" button
+        const button = document.createElement('a');
+        button.className = "btn btn-dark addToBuild";
+        //button.customer_id = part.order_customer_id;
+        button.item_id = part.item_id;
+        button.address_id = part.address_id
+        button.location = part.location
+    
+
+        button.innerText = "See more";
+
+        // Append children to card body
+        body.appendChild(address_id);
+        body.appendChild(location);
+        
+        //body.appendChild(deliver);
+       
+        body.appendChild(button);
+
+        // Append img and card body to card div
+        main.appendChild(img);
+        main.appendChild(body);
+
+        //append card to product table div
+        document.getElementById("product-table").appendChild(main);
+    }
+}
 async function listBanquets(fetchPath) {
     const partsRequest = await fetch(fetchPath);
     const partsData = partsRequest.ok ? await partsRequest.json() : [];
@@ -372,7 +427,7 @@ async function pcbButtons() {
 
             // List products and update buttons
             await listOrder("./caseProducts");
-            await caseButtons();
+            await addressButton();
         });
     }
 }
@@ -403,6 +458,35 @@ async function caseButtons() {
 
             // List products and update buttons
             await listItem("./keySwitchProducts");
+            await ksButtons();
+        });
+    }
+}
+
+async function kcButtons() {
+    const btnArray = document.getElementsByClassName("addToBuild");
+    for (let i = 0; i < btnArray.length; i++) {
+        btnArray[i].addEventListener('click', async () => {
+            await fetch('/updateParts', {
+                method: 'POST',
+                body: JSON.stringify({
+                    item_id: btnArray[i].item_id
+                })
+            });
+            cleanTable();
+            // Hide/show correct tabs to display build progress
+            document.getElementById("ksButton").disabled = true;
+            //document.getElementById("ksButton").disabled = false;
+            const backButton = document.getElementById("backButton");
+
+            // Back button function
+            backButton.removeEventListener('click', caseBack);
+            backButton.addEventListener('click', ksBack);
+
+            document.getElementById("userInstruction").innerHTML = "<b>Select a <span id='partWord'>Keyswitch</span> of your choice to proceed to keycaps.</b>";
+
+            // List products and update buttons
+            await listAddress("./keyCapProducts");
             //await ksButtons();
         });
     }

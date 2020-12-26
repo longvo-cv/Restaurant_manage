@@ -5,7 +5,7 @@ CREATE TABLE profiles (email varchar(200) unique not null, username varchar(100)
 
 CREATE TABLE customers (customer_id int, name varchar(150), email varchar(200), booking_id int, address_id int, order_id int, order_stat int, booking_stat int);   
 
-CREATE TABLE addresses (address_id int, location varchar(500));  
+CREATE TABLE addresses (address_id int, location varchar(500), item_id int);  
 
 CREATE TABLE items (item_id int, type varchar(150), image varchar(500) ,ingredients varchar(500), name varchar(150), price decimal);  
 
