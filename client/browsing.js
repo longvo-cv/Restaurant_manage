@@ -201,25 +201,19 @@ async function listAddress(fetchPath) {
         main.className = "card mb-2";
         main.style.width = "100%";
 
-        const img = document.createElement('img');
-        img.src = part.img;
-        img.className = "card-img-top";
-        img.alt = "food";
-        img.style.height = '200px';
-        img.style.width = '200px';
         // part body
         const body = document.createElement('div');
         body.className = "card-body";
 
          // part name
-        const address_id = document.createElement('h5');
-        address_id.className = "card-title";
-        address_id.innerText = part.address_id; 
+        const location = document.createElement('h5');
+        location.className = "card-title";
+        location.innerText = "Location: ".concat(part.location);
 
         // part id
-        const location = document.createElement('h6');
-        location.className = "card-subtitle mb-2 text-muted";
-        location.innerText = "Location: ".concat(part.location);
+        const address_id = document.createElement('h6');
+        address_id.className = "card-subtitle mb-2 text-muted";
+        address_id.innerText = part.address_id; 
 
         // "Add part to User's build" button
         const button = document.createElement('a');
