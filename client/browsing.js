@@ -216,23 +216,15 @@ async function listAddress(fetchPath) {
         address_id.innerText = part.address_id;
 
         // "Add part to User's build" button
-        const button = document.createElement('a');
-        button.className = "btn btn-dark addToBuild";
-        //button.customer_id = part.order_customer_id;
-        button.item_id = part.item_id;
-        button.address_id = part.address_id
-        button.location = part.location
+       
     
-
-        button.innerText = "See more";
-
         // Append children to card body
         body.appendChild(address_id);
         body.appendChild(location);
         
         //body.appendChild(deliver);
        
-        body.appendChild(button);
+        //body.appendChild(button);
 
         // Append img and card body to card div
         //main.appendChild(img);
