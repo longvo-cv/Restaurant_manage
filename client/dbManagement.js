@@ -54,8 +54,8 @@ async function getOrders() {
 async function getBanquets() {
     return await connectAndRun(db => db.any('SELECT * FROM banquets;'));
 }
-async function getLocation(address_id) {
-    return await connectAndRun(db => db.any('SELECT * FROM addresses WHERE address_id=$1;', [address_id]));
+async function getLocation(item_id) {
+    return await connectAndRun(db => db.any('SELECT * FROM addresses WHERE item_id=$1;', [item_id]));
 }
 
 async function getOrder(order_id) {
