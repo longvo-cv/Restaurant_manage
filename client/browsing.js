@@ -411,7 +411,7 @@ async function pcbButtons() {
             // Back button function
             backButton.addEventListener('click', pcbBack);
 
-            document.getElementById("userInstruction").innerHTML = "<b>Select a <span id='partWord'>Case</span> of your choice to proceed to cases.</b>";
+            //document.getElementById("userInstruction").innerHTML = "<b>Select a <span id='partWord'>Case</span> of your choice to proceed to cases.</b>";
 
             // List products and update buttons
             await listOrder("./caseProducts");
@@ -442,7 +442,7 @@ async function caseButtons() {
             backButton.removeEventListener('click', pcbBack);
             backButton.addEventListener('click', caseBack);
 
-            document.getElementById("userInstruction").innerHTML = "<b>Select a <span id='partWord'>Keyswitch</span> of your choice to proceed to keycaps.</b>";
+            //document.getElementById("userInstruction").innerHTML = "<b>Select a <span id='partWord'>Keyswitch</span> of your choice to proceed to keycaps.</b>";
 
             // List products and update buttons
             await listItem("./keySwitchProducts");
@@ -471,7 +471,7 @@ async function ksButtons() {
             backButton.removeEventListener('click', caseBack);
             backButton.addEventListener('click', ksBack);
 
-            document.getElementById("userInstruction").innerHTML = "<b>Select a <span id='partWord'>Keyswitch</span> of your choice to proceed to keycaps.</b>";
+            //document.getElementById("userInstruction").innerHTML = "<b>Select a <span id='partWord'>Keyswitch</span> of your choice to proceed to keycaps.</b>";
 
             // List products and update buttons
             await listAddress("./keyCapProducts");
@@ -514,7 +514,7 @@ if(document.getElementById("pcbButton")){
 
         document.getElementById("pcbButton").disabled = false;
 
-        document.getElementById("userInstruction").innerHTML = "<b>Select a <span id='partWord'>PCB</span> of your choice to proceed to cases.</b>";
+        //document.getElementById("userInstruction").innerHTML = "<b>Select a <span id='partWord'>PCB</span> of your choice to proceed to cases.</b>";
 
         await listParts("./pcbProducts");
         await pcbButtons();
@@ -540,7 +540,7 @@ if(document.getElementById("pcbButton")){
 
         document.getElementById("banquetButtonView").disabled = false;
 
-        document.getElementById("userInstruction1").innerHTML = "<b>Select a <span id='partWord'>PCB</span> of your choice to proceed to cases.</b>";
+        //document.getElementById("userInstruction1").innerHTML = "<b>Select a <span id='partWord'>PCB</span> of your choice to proceed to cases.</b>";
 
         await listBanquets("./banquetInfo");
         await pcbButtons();
