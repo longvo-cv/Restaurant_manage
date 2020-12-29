@@ -13,7 +13,7 @@ async function listParts(fetchPath) {
         main.style.width = "100%";
 
         const img = document.createElement('img');
-        img.src = part.img;
+        img.src = part.image;
         img.className = "card-img-top";
         img.alt = "food";
         img.style.height = '200px';
@@ -127,9 +127,12 @@ if(document.getElementById("menuButton")){
    // document.getElementById("rebuildButton").style.visibility = "hidden";
     //document.getElementById("cbuildButton").style.visibility = "hidden";
     //document.getElementById("backButton").style.visibility = "hidden";
+            cleanTable();
+
+            await listParts("./seeMenu");
 
     // when Build button is first clicked list pcbs and remove button
-    document.getElementById("viewButton").addEventListener('click', async () => {
+    /* document.getElementById("viewButton").addEventListener('click', async () => {
         cleanTable();
 
         const button = document.getElementById("viewButton");
@@ -145,7 +148,7 @@ if(document.getElementById("menuButton")){
         await listParts("./seeMenu");
         //await pcbButtons();
         //await fetch('./removePart');
-    });
+    }); */
     /* document.getElementById('cbuildButton').addEventListener('click', async () => {
         await fetch('/insertBuild');
     }); */
