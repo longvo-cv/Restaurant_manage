@@ -1,5 +1,4 @@
 
-
 // Function to list all "" parts in table
 async function listParts(fetchPath) {
     const partsRequest = await fetch(fetchPath);
