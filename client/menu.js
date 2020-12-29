@@ -119,10 +119,10 @@ function cleanTable() {
 
 window.addEventListener("load", async function () {
 if(document.getElementById("menuButton")){
-    document.getElementById("menuButton").disabled = true;
+    document.getElementById("menuButton").disabled = false;
     //document.getElementById("viewButton").disabled = true;
 
-    document.getElementById("partGroup").style.visibility = "hidden";
+    document.getElementById("partGroup").style.visibility = "visible";
     //document.getElementById("sortGroup").style.visibility = "hidden";
    // document.getElementById("rebuildButton").style.visibility = "hidden";
     //document.getElementById("cbuildButton").style.visibility = "hidden";
