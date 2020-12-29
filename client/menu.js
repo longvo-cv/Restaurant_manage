@@ -127,9 +127,9 @@ if(document.getElementById("menuButton")){
    // document.getElementById("rebuildButton").style.visibility = "hidden";
     //document.getElementById("cbuildButton").style.visibility = "hidden";
     //document.getElementById("backButton").style.visibility = "hidden";
-            cleanTable();
+    //cleanTable();
 
-            await listParts("./seeMenu");
+    await listParts("./seeMenu");
 
     // when Build button is first clicked list pcbs and remove button
     /* document.getElementById("viewButton").addEventListener('click', async () => {
