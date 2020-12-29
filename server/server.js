@@ -382,6 +382,19 @@ app.post('/register', (req, res) => {
         res.redirect('/register.html');
     }
 });
+app.post('/addMenu', (req, res) => {
+    const item_id = req.body['itemId'];
+    const type = req.body['type'];
+    const imageLink = req.body['imageLink'];
+    const ingredients = req.body['ingredients'];
+    const name = req.body['name'];
+
+    if (db.addMenu(item_id, type, imageLink, ingredients, name)) {
+        res.redirect('/menu.html');
+    } else {
+        res.redirect('/addMenu.html');
+    }
+});
 
 // Register URL
 app.get('/register',
