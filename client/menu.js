@@ -118,7 +118,7 @@ function cleanTable() {
 
 
 window.addEventListener("load", async function () {
-    document.getElementById("menuButton").disabled = false;
+    //document.getElementById("menuButton").disabled = false;
     //document.getElementById("viewButton").disabled = true;
 
     document.getElementById("partGroup").style.visibility = "visible";
