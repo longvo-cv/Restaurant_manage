@@ -118,7 +118,6 @@ function cleanTable() {
 
 
 window.addEventListener("load", async function () {
-if(document.getElementById("menuButton")){
     document.getElementById("menuButton").disabled = false;
     //document.getElementById("viewButton").disabled = true;
 
@@ -153,7 +152,7 @@ if(document.getElementById("menuButton")){
         await fetch('/insertBuild');
     }); */
 
-}
+
    
 
     // Add to build button
