@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8" />
     <title>Browse</title>
@@ -13,7 +14,7 @@
         }
     </style>
     <link rel="stylesheet" href="css/styles.css">
-    <script type="module" src="browsing.js"></script>
+    <script type="module" src="menu.js"></script>
 </head>
 
 <body>
@@ -44,65 +45,37 @@
 
         <!--User instructions-->
         <div id="userInstruction">
-            <b>View your restaurant orders</b>
+            <b>Menu</b>
         </div>
-        <div id="warning" class="mb-2">
-            <b><i>Warning, will restart if refreshed</i></b>
-        </div>
-
-        <!--Buttons to appear after build completion-->
         
-
 
         <!--Progress Tab / Sorting Buttons-->
         <div class="btn-toolbar justify-content-between mb-4" role="group" style="width: 100%">
             <div id="partGroup" class="btn-group mr-2" role="group">
-                <button id="pcbButton" type="button" class="btn btn-secondary" aria-haspopup="true"
+                <button id="menuButton" type="button" class="btn btn-secondary" aria-haspopup="true"
                     aria-expanded="false">
-                    Customer
+                    Menu
                 </button>
 
-                <button id="caseButton" type="button" class="btn btn-secondary">
-                    Order
+                <button id="viewButton" type="button" class="btn btn-secondary">
+                    View menu
                 </button>
 
-                <button id="ksButton" type="button" class="btn btn-secondary" aria-haspopup="true"
-                    aria-expanded="false">
-                    Item
-                </button>
+                <div>
+                    <br>
+                    <br><br>
+                    <div>Add to menu</div>
+                    <a class="btn btn-secondary" href="addMenu.html">Register</a>
+                </div>
 
-                <button id="addressButton" type="button" class="btn btn-secondary" aria-haspopup="true" aria-expanded="false">
-                    Addresses
-                </button>
 
-                
+
             </div>
 
-            <div id="build-group" class="btn-group mr-2" role="group">
-                <button id="beginButton" type="button" class="btn btn-success" aria-haspopup="true"
-                    aria-expanded="false">
-                    View Orders <br>
-                </button>
-                <button id="backButton" type="button" class="btn btn-danger" aria-haspopup="true" aria-expanded="false">
-                    Go Back
-                </button>
-            </div>
-
-            <div id="sortGroup" class="btn-group mr-2" role="group">
-                <h4 class="mr-2">Sort By:</h4>
-                <button id="highestButton" type="button" class="btn btn-secondary" aria-haspopup="true"
-                    aria-expanded="false">
-                    Highest Price
-                </button>
-                <button id="lowestButton" type="button" class="btn btn-secondary" aria-haspopup="true"
-                    aria-expanded="false">
-                    Lowest Price
-                </button>
-            </div>
         </div>
 
         <!--Table to list products-->
-        <div id="product-table" class="itemlist"></div>
+        <div id="actualMenu" class="itemlist"></div>
 
         <div class="clear"></div>
         <footer class="page-footer fixed-bottom font-small mdb-color pt-2">

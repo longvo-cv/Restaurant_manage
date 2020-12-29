@@ -263,6 +263,14 @@ function keyCapObject(object) {
     location: object.location,
 item_id: object.item_id };
 }
+function itemsObject(object) {
+    return { item_id:object.item_id,
+    type: object.type,
+image: object.image,
+ingredients: object.ingredients,
+name: object.name,
+price: object.price };
+}
 function cableObject(object) {
     return { imgSource: object.image, imgDesc: 'placeholder text', name: object.partname, id: object.itemid, desc: object.partdescription, price: object.price };
 }
@@ -289,6 +297,12 @@ app.get('/caseProducts', async (req, res) => {
     res.end();
 });
 //customer object
+app.get('/seeMenu', async (req, res) => {
+    // writeBlob(res);
+    const cus = await db.getItems();
+    writeDbObject(res, cus, itemsObject);
+    res.end();
+});
 app.get('/pcbProducts', async (req, res) => {
     // writeBlob(res);
     const cus = await db.getCus();

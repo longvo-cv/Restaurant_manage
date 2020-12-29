@@ -304,7 +304,7 @@ async function pcbBack() {
 
     document.getElementById("pcbButton").disabled = false;
     document.getElementById("caseButton").disabled = true;
-        document.getElementById("addressButton").disabled = true;
+    document.getElementById("addressButton").disabled = true;
 
     const backButton = document.getElementById("backButton");
     backButton.style.visibility = "hidden";
@@ -495,6 +495,8 @@ if(document.getElementById("pcbButton")){
     document.getElementById("pcbButton").disabled = true;
     document.getElementById("caseButton").disabled = true;
     document.getElementById("ksButton").disabled = true;
+        document.getElementById("addressButton").disabled = true;
+
 
      document.getElementById("partGroup").style.visibility = "hidden";
     document.getElementById("sortGroup").style.visibility = "hidden";
