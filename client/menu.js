@@ -143,7 +143,7 @@ if(document.getElementById("menuButton")){
         //document.getElementById("userInstruction").innerHTML = "<b>Select a <span id='partWord'>PCB</span> of your choice to proceed to cases.</b>";
 
         await listParts("./seeMenu");
-        await pcbButtons();
+        //await pcbButtons();
         //await fetch('./removePart');
     });
     /* document.getElementById('cbuildButton').addEventListener('click', async () => {
