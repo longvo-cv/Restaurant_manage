@@ -83,8 +83,8 @@ async function addUser(email, username, buildID, password, salt) {
     return await connectAndRun(db => db.any('INSERT INTO profiles (email, username, hashedpwd, salt) VALUES ($1, $2, $3, $4);', [email, username, password, salt]));
 }
 
-async function addMenu(item_id, type, image, name, price) {
-    return await connectAndRun(db => db.any('INSERT INTO items (item_id, type, image, name,price) VALUES ($1, $2, $3, $4,$5);', [item_id, type, image, name,price]));
+async function addMenu(item_id, type, image,ingredients, name, price) {
+    return await connectAndRun(db => db.any('INSERT INTO items (item_id, type, image,ingredients, name,price) VALUES ($1, $2, $3, $4,$5,$6);', [item_id, type, image,ingredients, name,price]));
 }
 
 async function addBuild(buildID, pcbID, caseID, switchID, keycapID, cableID) {

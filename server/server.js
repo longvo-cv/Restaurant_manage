@@ -388,8 +388,10 @@ app.post('/addMenu', (req, res) => {
     const imageLink = req.body['imageLink'];
     const ingredients = req.body['ingredients'];
     const name = req.body['name'];
+        const price = req.body['price'];
 
-    if (db.addMenu(item_id, type, imageLink, ingredients, name)) {
+
+    if (db.addMenu(item_id, type, imageLink, ingredients, name,price)) {
         res.redirect('/menu.html');
     } else {
         res.redirect('/addMenu.html');
