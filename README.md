@@ -1,5 +1,6 @@
 Testing branch upload  
 Logged in as manager
+Database management software: PostgreSQL ( 7 databases)
 
 CREATE TABLE profiles (email varchar(200) unique not null, username varchar(100) UNIQUE NOT NULL, buildID SERIAL PRIMARY KEY, hashedpwd varchar(300), salt varchar(300));
 
