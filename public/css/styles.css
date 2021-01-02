@@ -40,5 +40,8 @@ a {
 }
 .container {
     padding: 60px 15px 0;
-
+    overflow:scroll
+}
+.container::-webkit-scrollbar {
+    display: none;
 }
