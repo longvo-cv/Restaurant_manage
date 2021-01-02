@@ -31,10 +31,6 @@ async function listParts(fetchPath) {
         id.className = "card-subtitle mb-2 text-muted";
         id.innerText = "Customer ID: ".concat(part.customer_id);
 
-        //const order_stat = document.createElement('h6');
-        //order_stat.className = "card-subtitle mb-2 text-muted";
-        //order_stat.innerText = "Order type: ".concat(part.order_stat);
-
         // "Add part to User's build" button
         const button = document.createElement('a');
         button.className = "btn btn-dark addToBuild";
@@ -47,7 +43,6 @@ async function listParts(fetchPath) {
         body.appendChild(name);
         body.appendChild(order_id);
         body.appendChild(id);
-        //body.appendChild(order_stat);
        
         body.appendChild(button);
 
