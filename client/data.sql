@@ -19,8 +19,6 @@ INSERT INTO orders VALUES (180, 125 ,345678, '45 minutes (Ordered at 4:15pm on D
 INSERT INTO customers VALUES (123456, 'Hai' ,'haithere@gmail.com',0,2526,160,1,0);
 INSERT INTO customers VALUES (234567, 'lol' ,'lolplayer@gmail.com',0,2530,170,1,0);
 INSERT INTO customers VALUES (345678, 'customer3' ,'customer3@gmail.com',0,2529,180,1,0);
-
-
 INSERT INTO customers VALUES (555555, 'BanquetBooking' ,'bqb@gmail.com',999,2526,55,0,1);
 INSERT INTO customers VALUES (666666, 'Customer2' ,'lolplayer@gmail.com',888,2530,56,0,1);
 INSERT INTO customers VALUES (898989, 'customer3' ,'customer3@gmail.com',777,2529,57,0,1);
