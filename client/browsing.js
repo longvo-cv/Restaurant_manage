@@ -31,9 +31,9 @@ async function listParts(fetchPath) {
         id.className = "card-subtitle mb-2 text-muted";
         id.innerText = "Customer ID: ".concat(part.customer_id);
 
-        const order_stat = document.createElement('h6');
-        order_stat.className = "card-subtitle mb-2 text-muted";
-        order_stat.innerText = "Order type: ".concat(part.order_stat);
+        //const order_stat = document.createElement('h6');
+        //order_stat.className = "card-subtitle mb-2 text-muted";
+        //order_stat.innerText = "Order type: ".concat(part.order_stat);
 
         // "Add part to User's build" button
         const button = document.createElement('a');
@@ -47,7 +47,7 @@ async function listParts(fetchPath) {
         body.appendChild(name);
         body.appendChild(order_id);
         body.appendChild(id);
-        body.appendChild(order_stat);
+        //body.appendChild(order_stat);
        
         body.appendChild(button);
 
@@ -86,7 +86,7 @@ async function listOrder(fetchPath) {
 
         const time = document.createElement('h6');
         time.className = "card-subtitle mb-2 text-muted";
-        time.innerText = "Order type: ".concat(part.time);
+        time.innerText = "Order time: ".concat(part.time);
 
         const deliver = document.createElement('h6');
         deliver.className = "card-subtitle mb-2 text-muted";
@@ -157,7 +157,7 @@ async function listItem(fetchPath) {
 
         const ingredients = document.createElement('h6');
         ingredients.className = "card-subtitle mb-2 text-muted";
-        ingredients.innerText = "Order type: ".concat(part.ingredients);
+        ingredients.innerText = "Ingredients: ".concat(part.ingredients);
 
         const price = document.createElement('h6');
         price.className = "card-subtitle mb-2 text-muted";

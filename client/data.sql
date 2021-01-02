@@ -12,9 +12,9 @@ INSERT INTO delivery VALUES (40, 'Delivered',6666);
 INSERT INTO delivery VALUES (50, 'Not delivered',7777);
 INSERT INTO delivery VALUES (60, 'Not delivered',8888);
 
-INSERT INTO orders VALUES (160, 100 ,123456, '30 minutes',20);
-INSERT INTO orders VALUES (170, 110 ,234567, '15 minutes',30);
-INSERT INTO orders VALUES (180, 125 ,345678, '45 minutes',60);
+INSERT INTO orders VALUES (160, 100 ,123456, '30 minutes (Ordered at 4:15pm on Dec 29 2020)',20);
+INSERT INTO orders VALUES (170, 110 ,234567, '15 minutes (Ordered at 4:15pm on Dec 29 2020)',30);
+INSERT INTO orders VALUES (180, 125 ,345678, '45 minutes (Ordered at 4:15pm on Dec 29 2020)',60);
 
 INSERT INTO customers VALUES (123456, 'Hai' ,'haithere@gmail.com',0,2526,160,1,0);
 INSERT INTO customers VALUES (234567, 'lol' ,'lolplayer@gmail.com',0,2530,170,1,0);
