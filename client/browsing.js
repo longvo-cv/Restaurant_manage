@@ -210,18 +210,9 @@ async function listAddress(fetchPath) {
         address_id.className = "card-subtitle mb-2 text-muted";
         address_id.innerText = part.address_id;
 
-        // "Add part to User's build" button
-       
-    
-        // Append children to card body
         body.appendChild(address_id);
         body.appendChild(location);
-        
-        //body.appendChild(deliver);
        
-        //body.appendChild(button);
-
-        // Append img and card body to card div
         //main.appendChild(img);
         main.appendChild(body);
 
