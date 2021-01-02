@@ -40,7 +40,6 @@ CREATE TABLE banquets (customer_id int,booking_id int, hall_capacity int, price 
             * order_stat  
             * booking_stat
         
-
         - delivery:  
             * deliver_id  
             * status  
