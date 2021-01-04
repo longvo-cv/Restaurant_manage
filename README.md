@@ -62,3 +62,27 @@ CREATE TABLE banquets (customer_id int,booking_id int, hall_capacity int, price 
             * ingredients  
             * name  
             * type  
+
+All  
+![example image](images/all.png)
+
+Addresses  
+![example image](images/addresses.png)
+
+Banquets  
+![example image](images/banquets.png)
+
+Customers  
+![example image](images/customers.png)
+  
+Delivery  
+![example image](images/delivery.png)
+
+Items  
+![example image](images/items.png)
+  
+Orders  
+![example image](images/orders.png)
+
+Profiles  
+![example image](images/profiles.png)
